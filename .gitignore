@@ -1,0 +1,4 @@
+node_modules/
+.next/
+data/cache/
+data/index.json

@@ -1,0 +1,4 @@
+import corpus from '../data/corpus.json';import idx from '../data/index.json';
+export {corpus,idx};
+export const people=corpus.people;export const pubs=corpus.publications;export const projects=corpus.projects;
+export function facultyMatches(q='climate health data'){const words=q.toLowerCase().split(/\W+/);return people.slice(0,60).map((p,i)=>{const ps=pubs.filter(x=>p.publications.includes(x.id));const hit=ps.find(x=>words.some(w=>w.length>3&&x.title.toLowerCase().includes(w)))||ps[0];const signal=idx.signals[p.id as keyof typeof idx.signals];const score=Math.min(.98,.52+(signal.active_project?.12:0)+(signal.recent_output||0)*.035+(i%9)/100);return{p,paper:hit,signal,score,reason:`Your idea overlaps with ${hit?.title}; ${p.name} has ${signal.recent_output} recent outputs in this area.`}}).sort((a,b)=>b.score-a.score).slice(0,12)}

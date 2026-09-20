@@ -1,0 +1,1 @@
+{"name":"orange-coauthor","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start","data":"node scripts/build-corpus.mjs && node scripts/build-index.mjs"},"dependencies":{"next":"15.5.3","react":"19.1.1","react-dom":"19.1.1"},"devDependencies":{"@types/node":"^22","@types/react":"^19","@types/react-dom":"^19","typescript":"^5.7"}}

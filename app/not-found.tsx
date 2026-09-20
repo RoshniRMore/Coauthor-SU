@@ -1,0 +1,1 @@
+import Link from 'next/link';export default function NotFound(){return <><h1>Nothing is mapped here.</h1><p>The theme or group may not exist in this corpus.</p><Link className="button" href="/">Return to the theme map</Link></>}

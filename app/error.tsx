@@ -1,0 +1,1 @@
+'use client';export default function ErrorView({reset}:{reset:()=>void}){return <div className="notice"><h1>That view could not load.</h1><p>The offline index is available, but this page hit an unexpected error.</p><button onClick={reset}>Try again</button></div>}

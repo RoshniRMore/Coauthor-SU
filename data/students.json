@@ -1,0 +1,17 @@
+[
+{"id":1,"name":"Maya","idea":"How extreme heat changes health outcomes in Syracuse neighborhoods","skills":["R","interviews"],"courses":["Public Health","Statistics"]},
+{"id":2,"name":"Eli","idea":"Machine learning to identify harmful algal blooms","skills":["Python","GIS"],"courses":["Data Science","Ecology"]},
+{"id":3,"name":"Noor","idea":"Archives and migration stories in Central New York","skills":["oral history","writing"],"courses":["History","Sociology"]},
+{"id":4,"name":"Sam","idea":"Better batteries for cold climates","skills":["lab safety","MATLAB"],"courses":["Chemistry","Physics"]},
+{"id":5,"name":"Priya","idea":"Can social media make local government more accessible?","skills":["design","survey research"],"courses":["Civic Media","Political Science"]},
+{"id":6,"name":"Luis","idea":"Affordable sensors for urban air quality","skills":["Arduino","CAD"],"courses":["Engineering","Environmental Science"]},
+{"id":7,"name":"Grace","idea":"Neural development and early language acquisition","skills":["childcare","SPSS"],"courses":["Psychology","Linguistics"]},
+{"id":8,"name":"Owen","idea":"Cybersecurity education for small nonprofits","skills":["networking","teaching"],"courses":["Security","Information Studies"]},
+{"id":9,"name":"Fatima","idea":"Food access and chronic disease","skills":["community outreach","Excel"],"courses":["Nutrition","Public Health"]},
+{"id":10,"name":"Theo","idea":"Autonomous robots that navigate snowy sidewalks","skills":["ROS","C++"],"courses":["Robotics","Algorithms"]},
+{"id":11,"name":"June","idea":"Poetry, memory, and digital archives","skills":["editing","HTML"],"courses":["English","Digital Humanities"]},
+{"id":12,"name":"Amara","idea":"Inclusive math instruction for multilingual students","skills":["tutoring","Spanish"],"courses":["Education","Mathematics"]},
+{"id":13,"name":"Ben","idea":"I like space and want to do something with telescope data","skills":["Python","calculus"],"courses":["Astronomy","Physics"]},
+{"id":14,"name":"Mei","idea":"Community responses to freshwater flooding","skills":["GIS","photography"],"courses":["Geography","Policy"]},
+{"id":15,"name":"Jonah","idea":"Privacy-preserving tools for health data","skills":["Java","ethics review"],"courses":["Computer Science","Bioethics"]}
+]
