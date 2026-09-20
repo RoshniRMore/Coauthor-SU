@@ -13,7 +13,11 @@ Open `http://localhost:3000`. To regenerate the checked-in fallback corpus and d
 
 ## Data provenance
 
-The intended public sources are Experts@Syracuse (Elsevier Pure) and SURFACE (Digital Commons/OAI-PMH). The build environment could not reach either host, so the checked-in corpus uses the documented last-resort fallback: 300 clearly marked synthetic people with 1,200 publications and 150 projects. It must not be represented as real Syracuse coverage. `scripts/scrape-syracuse.mjs` implements cache-first, one-request-per-second retrieval, exponential backoff, an identifying user agent, and robots-first discovery for a future network-enabled run.
+The checked-in corpus contains 1,512 Syracuse-affiliated researchers and 10,779 publications from the OpenAlex public API, using Syracuse University institution `I70983195`. Experts@Syracuse (Elsevier Pure) was the intended source, but its routes sit behind a Cloudflare browser challenge. The scraper does not attempt to bypass that challenge and transparently falls back to OpenAlex.
+
+Raw ingestion returned 6,658 author records. The cleaning pass in `scripts/clean-corpus.mjs` excluded works with more than 50 authors, then retained only people with at least three works, a publication since 2023, at least one first or last authorship, and a plausible parsed name (at least two name tokens containing two or more letters). The 2023 cutoff describes this snapshot; reruns use the current UTC year minus three. These filters define the corpus's coverage, rather than a complete or verified faculty directory.
+
+OpenAlex grant records are funder acknowledgements extracted from publications, not sponsored-project records. Retained acknowledgements provide provenance only: all grant dates and active-funding claims were removed rather than displayed without supporting evidence.
 
 ## Architecture
 
