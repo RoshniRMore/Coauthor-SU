@@ -1,12 +1,10 @@
 import fs from 'node:fs/promises';
-import { spawn } from 'node:child_process';
+import { embedText, MODEL, lexicalEmbed } from '../lib/embeddings.mjs';
 
 const corpus = JSON.parse(await fs.readFile('data/corpus.json', 'utf8'));
 const cacheDir = 'data/cache';
 await fs.mkdir(cacheDir, { recursive: true });
-const embeddingCachePath = `${cacheDir}/embeddings.json`;
 const explanationCachePath = `${cacheDir}/explanations.json`;
-const themeNameCachePath = `${cacheDir}/theme-names.json`;
 const nowYear = new Date().getUTCFullYear();
 const recentCutoff = nowYear - 3;
 const THEME_COUNT = Math.max(40, Math.min(80, Number(process.env.THEME_COUNT) || 60));
@@ -17,8 +15,7 @@ const publicationText = publication => `${publication.title}. ${publication.abst
 const pubById = new Map(corpus.publications.map(publication => [publication.id, publication]));
 const personById = new Map(corpus.people.map(person => [person.id, person]));
 
-// A corpus-trained TF-IDF semantic space: explicit vocabulary, IDF weights, and
-// normalized dense document vectors. This replaces the lossy 24-bin word hash.
+// Retain a separate lexical space for explicit offline fallback only.
 const documentTokens = corpus.publications.map(publication => tokenize(publicationText(publication)));
 const documentFrequency = new Map();
 for (const words of documentTokens) for (const word of new Set(words))
@@ -28,51 +25,57 @@ const vocabulary = [...documentFrequency.entries()]
   .sort((a, b) => (b[1] * Math.log(corpus.publications.length / b[1]) ** 2) - (a[1] * Math.log(corpus.publications.length / a[1]) ** 2) || a[0].localeCompare(b[0]))
   .slice(0, DIMENSIONS)
   .map(([word]) => word);
-const termIndex = new Map(vocabulary.map((word, index) => [word, index]));
 const idf = vocabulary.map(word => Math.log((1 + corpus.publications.length) / (1 + documentFrequency.get(word))) + 1);
 const normalize = vector => {
   const norm = Math.hypot(...vector) || 1;
   return vector.map(value => value / norm);
 };
-const embedTokens = words => {
-  const vector = Array(DIMENSIONS).fill(0);
-  const counts = new Map();
-  for (const word of words) if (termIndex.has(word)) counts.set(word, (counts.get(word) || 0) + 1);
-  for (const [word, count] of counts) vector[termIndex.get(word)] = (1 + Math.log(count)) * idf[termIndex.get(word)];
-  return normalize(vector);
-};
-const signature = `${corpus.meta.cleaned_at || corpus.meta.generated_at}:${corpus.publications.length}:${corpus.people.length}:${DIMENSIONS}`;
-let embeddingCache = {};
-try { embeddingCache = JSON.parse(await fs.readFile(embeddingCachePath, 'utf8')); } catch {}
-const vectors = embeddingCache.signature === signature ? embeddingCache.vectors : { publications: {}, people: {} };
-for (let index = 0; index < corpus.publications.length; index++) {
-  const publication = corpus.publications[index];
-  vectors.publications[publication.id] ||= embedTokens(documentTokens[index]);
-}
+const students = JSON.parse(await fs.readFile('data/students.json', 'utf8'));
+const personText = person => [person.name, ...person.departments, ...person.publications.map(id => pubById.get(id)).filter(Boolean).map(publicationText)].join('. ');
+const lexical = { vocabulary, idf };
+const fallbackVectors = { publications: {}, people: {}, students: {} };
+for (const pub of corpus.publications) fallbackVectors.publications[pub.id] = lexicalEmbed(publicationText(pub), lexical);
 for (const person of corpus.people) {
-  if (vectors.people[person.id]) continue;
-  const works = person.publications.map(id => pubById.get(id)).filter(Boolean);
   const composite = Array(DIMENSIONS).fill(0);
-  let totalWeight = 0;
-  for (const work of works) {
+  for (const work of person.publications.map(id => pubById.get(id)).filter(Boolean)) {
     const weight = work.year >= recentCutoff ? 2 : 1;
-    totalWeight += weight;
-    vectors.publications[work.id].forEach((value, index) => composite[index] += value * weight);
+    fallbackVectors.publications[work.id].forEach((value, dimension) => composite[dimension] += value * weight);
   }
-  vectors.people[person.id] = normalize(composite.map(value => value / (totalWeight || 1)));
+  fallbackVectors.people[person.id] = normalize(composite);
 }
-await fs.writeFile(embeddingCachePath, JSON.stringify({ signature, model: `tf-idf-${DIMENSIONS}`, vocabulary, vectors }));
+for (const student of students) fallbackVectors.students[student.id] = lexicalEmbed(student.idea, lexical);
+let vectors = { publications: {}, people: {}, students: {} };
+let embeddingModel = MODEL;
+try {
+  for (const [kind, records, getText] of [
+    ['publications', corpus.publications, publicationText],
+    ['people', corpus.people, personText],
+    ['students', students, student => student.idea]
+  ]) {
+    for (let i = 0; i < records.length; i++) {
+      vectors[kind][records[i].id] = await embedText(getText(records[i]));
+      if (i % 250 === 0) console.log(`Embedded ${kind}: ${i + 1}/${records.length}`);
+    }
+  }
+} catch (error) {
+  console.error(`WARNING: NEURAL EMBEDDINGS UNAVAILABLE. USING TF-IDF FALLBACK: ${error.message}`);
+  embeddingModel = `tf-idf-${DIMENSIONS}`;
+  vectors = fallbackVectors;
+}
 
 const dot = (a, b) => a.reduce((sum, value, index) => sum + value * b[index], 0);
 const distance = (a, b) => 1 - dot(a, b);
 const pubVectors = corpus.publications.map(publication => vectors.publications[publication.id]);
 // Deterministic farthest-first seeding followed by spherical k-means.
 const seedCandidates = pubVectors.filter(vector => dot(vector, vector) > .5);
+console.log('Deriving themes with spherical k-means...');
 let centroids = [[...seedCandidates[0]]];
+const nearestDistances = Array(seedCandidates.length).fill(Infinity);
 while (centroids.length < THEME_COUNT) {
   let farthestIndex = 0, farthestDistance = -1;
   for (let index = 0; index < seedCandidates.length; index++) {
-    const nearest = Math.min(...centroids.map(centroid => distance(seedCandidates[index], centroid)));
+    const nearest = Math.min(nearestDistances[index], distance(seedCandidates[index], centroids[centroids.length - 1]));
+    nearestDistances[index] = nearest;
     if (nearest > farthestDistance) { farthestDistance = nearest; farthestIndex = index; }
   }
   centroids.push([...seedCandidates[farthestIndex]]);
@@ -96,55 +99,67 @@ const clusters = Array.from({ length: THEME_COUNT }, (_, cluster) => corpus.publ
   .map((publication, index) => ({ publication, score: assignments[index] === cluster ? dot(pubVectors[index], centroids[cluster]) : -1 }))
   .filter(item => item.score >= 0)
   .sort((a, b) => b.score - a.score));
-const topTerms = centroid => centroid.map((value, index) => ({ word: vocabulary[index], value: value * idf[index] }))
-  .sort((a, b) => b.value - a.value).slice(0, 8).map(item => item.word);
-
-let cachedNames = {};
-try { cachedNames = JSON.parse(await fs.readFile(themeNameCachePath, 'utf8')); } catch {}
-const clusterKeys = clusters.map((items, index) => `${index}:${items.slice(0, 5).map(item => item.publication.id).join(',')}`);
-const missing = clusterKeys.some(key => !cachedNames[key]);
-const fallbackNames = Object.fromEntries(clusterKeys.map((key, index) => [key, {
-  name: topTerms(centroids[index]).slice(0, 5).map(word => word[0].toLocaleUpperCase() + word.slice(1)).join(' '),
-  description: `Research on ${topTerms(centroids[index]).slice(0, 4).join(', ')}.`
-}]));
-
-async function nameWithLlm() {
-  if (!missing || process.env.SKIP_LLM === '1') return;
-  const payload = clusters.map((items, index) => ({
-    key: clusterKeys[index],
-    publications: items.slice(0, 8).map(item => item.publication.title)
-  }));
-  const prompt = `Name each research cluster using only its publication titles. Return JSON object keyed exactly by key, each value {"name":"4-8 plain words","description":"one factual sentence"}. Avoid vague labels and do not invent facts.\n${JSON.stringify(payload)}`;
-  const outputPath = `${cacheDir}/theme-names-llm-output.json`;
-  await new Promise((resolve, reject) => {
-    const child = spawn('codex.cmd', ['exec', '--ephemeral', '--sandbox', 'read-only', '--color', 'never', '-o', outputPath, '-'], { stdio: ['pipe', 'inherit', 'inherit'], shell: true });
-    child.stdin.end(prompt);
-    child.on('exit', code => code === 0 ? resolve() : reject(new Error(`LLM naming exited ${code}`)));
-  });
-  const raw = await fs.readFile(outputPath, 'utf8');
-  const json = raw.slice(raw.indexOf('{'), raw.lastIndexOf('}') + 1);
-  Object.assign(cachedNames, JSON.parse(json));
-  await fs.writeFile(themeNameCachePath, JSON.stringify(cachedNames, null, 2));
-}
-try { await nameWithLlm(); } catch (error) { console.warn(`LLM naming unavailable; using content-derived names: ${error.message}`); }
-for (const key of clusterKeys) cachedNames[key] ||= fallbackNames[key];
-const reviewedNames = {
-  W3137396988:['Blockchain, Markets, and Global Trade','Digital finance, market behavior, and international trade policy.'],
-  W4388655036:['Cell Mechanics and Immune Signaling','Cell motion, tissue mechanics, and immune signaling pathways.'],
-  W3200661821:['Particle Physics and Cosmological Theory','Experimental particle measurements and theoretical questions in cosmology.'],
-  W4224250186:['Behavior, Learning, and Social Identity','Human behavior, educational reasoning, and social identity.'],
-  W4320912752:['Biophysical Systems Across Scales','Physical and biological mechanisms spanning materials, organisms, and galaxies.'],
-  W4214671596:['COVID-19 Health and Urban Impacts','Pandemic forecasting, health effects, and consequences for cities.'],
-  W4387020127:['Supernovae and Black Hole Formation','Stellar explosions, mass ejection, and early black hole growth.'],
-  W3190076069:['Urban Ventilation and Building Energy','Airflow, pollutant dispersion, resilience, and household energy demand.'],
-  W4366124134:['Statistical Models and Collective Dynamics','Econometric estimation and mathematical models of collective systems.'],
-  W4286494114:['Global Science and Human Systems','Cross-disciplinary studies of Earth, mathematics, psychology, and neuroscience.']
+// Neural dimensions are not words. Label clusters from their member documents.
+const topTerms = items => {
+  const counts = new Map();
+  for (const { publication } of items.slice(0, 30)) {
+    for (const word of new Set(tokenize(publicationText(publication))))
+      counts.set(word, (counts.get(word) || 0) + 1);
+  }
+  return [...counts].map(([word, count]) => ({word, score: count * Math.log((1 + corpus.publications.length) / (1 + (documentFrequency.get(word) || 0)))}))
+    .sort((a, b) => b.score - a.score).slice(0, 5).map(item => item.word);
 };
-clusterKeys.forEach((key, index) => {
-  const reviewed = reviewedNames[clusters[index][0]?.publication.id];
-  if (reviewed) cachedNames[key] = { name: reviewed[0], description: reviewed[1] };
-});
-await fs.writeFile(themeNameCachePath, JSON.stringify(cachedNames, null, 2));
+// Reviewed labels from the representative titles; invalidate when representatives change.
+const reviewedNames = {
+  "Xenova/all-MiniLM-L6-v2:W4398193981,W4392567417,W4409045795,W4409324312,W4385214308": {
+    "name": "Entrepreneurial Finance and Sustainable Ventures",
+    "description": "Entrepreneurial funding, startup markets, and environmental and social performance."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4386076031,W4319300011,W4394597621,W4403488453,W4366310357": {
+    "name": "Neural Learning for Point Clouds",
+    "description": "Contrastive learning, feature fusion, and classification of three-dimensional point clouds."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4414790062,W4402633669,W4387252643,W3161940344,W7167638248": {
+    "name": "Social Justice and Antiracist Institutions",
+    "description": "Antiracist practice, media justice, and institutional change in information studies."
+  },
+  "Xenova/all-MiniLM-L6-v2:W7156898800,W3203745194,W7199547026,W4411088407,W3132404058": {
+    "name": "Immune Signaling and Therapeutic Biomaterials",
+    "description": "Macrophage-targeting materials, inflammatory damage, and peptide-based therapies."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4392122595,W7127194890,W3138151157,W7148614652,W4366594192": {
+    "name": "Hydrogel Scaffolds and Biomedical Printing",
+    "description": "Dynamic scaffolds, printable hydrogels, and multiscale perfusable models."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4414052865,W7155178166,W4415122038,W3180660291,W4327694623": {
+    "name": "Speech Perception and Childhood Disorders",
+    "description": "Speech sound disorders, auditory perception, and biofeedback treatment."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4281479600,W4411426908,W3190444875,W4408435664,W7134272283": {
+    "name": "Forest Watersheds and Climate Change",
+    "description": "Watershed hydrology, biogeochemistry, and long-term responses to climate and acidification."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4294690811,W4289943244,W3157491515,W4386174146,W4382138379": {
+    "name": "Exoskeleton Control and Assisted Movement",
+    "description": "Closed-loop control of exoskeletons, electrical stimulation, and assisted cycling."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4299356718,W4407074772,W4400442409,W4403433208,W4416006791": {
+    "name": "Artificial Intelligence and Organizational Work",
+    "description": "Information systems, artificial intelligence, and changes in work and management."
+  },
+  "Xenova/all-MiniLM-L6-v2:W4281258505,W7117468286,W4401107045,W4414149897,W4385230620": {
+    "name": "Alcohol Use and Treatment Outcomes",
+    "description": "Alcohol treatment, drinking-related harms, and interventions for people with chronic conditions."
+  }
+};
+const clusterKeys = clusters.map(items => `${embeddingModel}:${items.slice(0, 5).map(item => item.publication.id).join(',')}`);
+const cachedNames = Object.fromEntries(clusters.map((items, index) => {
+  const terms = topTerms(items);
+  return [clusterKeys[index], reviewedNames[clusterKeys[index]] || {
+    name: terms.map(word => word[0].toUpperCase() + word.slice(1)).join(' / '),
+    description: `Research on ${terms.join(', ')}.`
+  }];
+}));
 
 const themes = clusters.map((items, index) => {
   const publicationIds = items.map(item => item.publication.id);
@@ -220,7 +235,7 @@ for (const person of corpus.people) {
   };
 }
 let explanations = {};
-try { explanations = JSON.parse(await fs.readFile(explanationCachePath, 'utf8')); } catch {}
+// Recompute explanations against the newly derived themes.
 for (const person of corpus.people) {
   if (explanations[person.id]) continue;
   const bestTheme = themes.map(theme => ({ theme, score: dot(vectors.people[person.id], theme.centroid) })).sort((a, b) => b.score - a.score)[0].theme;
@@ -228,7 +243,8 @@ for (const person of corpus.people) {
   explanations[person.id] = `${person.name} matches through “${paper.title}” and the ${bestTheme.name} theme.`;
 }
 await fs.writeFile(explanationCachePath, JSON.stringify(explanations, null, 2));
-await fs.writeFile('data/index.json', JSON.stringify({ meta: { embedding_model: `tf-idf-${DIMENSIONS}`, recent_cutoff: recentCutoff }, embedding: { vocabulary, idf }, themes, groups, signals, vectors, explanations }, null, 2));
+await fs.writeFile('data/index.json', JSON.stringify({ meta: { embedding_model: embeddingModel, recent_cutoff: recentCutoff }, embedding: { vocabulary, idf }, fallback: { vectors: fallbackVectors }, themes, groups, signals, vectors, explanations }, (_, value) => typeof value === 'number' && !Number.isInteger(value) ? Number(value.toFixed(8)) : value));
+console.log(`Embedding model: ${embeddingModel}`);
 console.log(`Theme count: ${themes.length}`);
 console.log(`Group count: ${groups.length}`);
 console.log('Ten sample theme names:');

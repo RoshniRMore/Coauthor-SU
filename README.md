@@ -28,3 +28,15 @@ Matching follows the requested profiles conceptually and always presents a cited
 ## Constraints
 
 See `DECISIONS.md` for every ambiguity choice and known limitation. No runtime request depends on a Syracuse server.
+
+## Semantic embeddings
+
+Run `npm run index` to rebuild only the derived index without modifying the corpus or running the scraper. Indexing uses the local neural sentence-transformer `Xenova/all-MiniLM-L6-v2` (384 dimensions, quantized CPU inference, mean pooling and normalized vectors). No API key is required. The first run downloads weights from Hugging Face; subsequent runs reuse `data/cache/models`.
+
+Publication text, researcher composites, and student posts use the same model. Long text is split into 180-word chunks whose vectors are length-weighted and normalized. Content-hash caches in `data/cache/neural-v1` include the model and preprocessing version. Unchanged inputs do not run inference again. Keep this directory between builds.
+
+`POST /api/embed` accepts `{ "text": "research idea" }` and embeds student text server-side through the same model and disk cache. The matches screen uses this endpoint for faculty and student ranking. If inference is unavailable, the builder or endpoint prints `WARNING: NEURAL EMBEDDINGS UNAVAILABLE` and uses the retained TF-IDF space. Query fallback compares only lexical vectors and the UI displays the warning. Re-run indexing after restoring the model to replace a fallback index.
+
+Spherical k-means derives themes from neural publication vectors. Co-author label propagation is preserved; group theme assignments use the neural researcher vectors. Theme labels come from cluster member text, not neural coordinate values.
+
+After rebuilding the index, restart the application to load the new vectors. Run `npm run test:embeddings` to check semantic similarity, cache reuse, and explicit lexical fallback.
