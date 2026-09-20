@@ -11,9 +11,11 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode
+from uuid import uuid4
 
 import numpy as np
 import streamlit as st
+import streamlit.components.v1 as components
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -61,6 +63,10 @@ def source_link(label, url):
             st.query_params.clear()
             st.query_params.update(params)
             st.session_state.pending_view = params["view"]
+            if "theme" in params or "record" in params:
+                st.session_state["scroll_to_detail"] = True
+            else:
+                st.session_state.reset_scroll = True
             st.rerun()
     elif url and url.startswith(("https://", "http://")):
         st.link_button(label, url)
@@ -87,6 +93,43 @@ def faculty_ranking(vector, people, index, open_ids):
 def main():
     st.session_state.link_counts = {}
     st.set_page_config(page_title="Orange Coauthor", page_icon="🍊", layout="wide")
+    # Consume navigation once; search, tabs and other ordinary reruns keep their position.
+    if st.session_state.pop("reset_scroll", False):
+        components.html(
+            # A fresh document also runs the script on consecutive navigations.
+            f"<!-- navigation: {uuid4()} -->" + """
+            <script>
+            const doc = window.parent.document;
+            // Hide the iframe's wrapper too, so removing it on the next rerun
+            // cannot shift the content by Streamlit's inter-element gap.
+            if (!doc.getElementById("navigation-scroll-style")) {
+                const style = doc.createElement("style");
+                style.id = "navigation-scroll-style";
+                style.textContent = `
+                    :is([data-testid="stElementContainer"], .stElementContainer,
+                        .element-container):has(iframe[srcdoc*="<!-- navigation:"]) {
+                        display: none;
+                    }
+                `;
+                doc.head.appendChild(style);
+            }
+            const selectors = [
+                '[data-testid="stMain"]',
+                '[data-testid="stAppViewContainer"] .main',
+                'section.main',
+                'main',
+                '.main'
+            ];
+            for (const selector of selectors) {
+                for (const element of doc.querySelectorAll(selector)) {
+                    element.scrollTo({top: 0, left: 0, behavior: "instant"});
+                }
+            }
+            window.parent.scrollTo(0, 0);
+            </script>
+            """,
+            height=0,
+        )
     st.html(Path(__file__).with_name("palette.css"))
     try:
         paths = [ROOT / "data" / name for name in ("corpus.json", "index.json", "students.json")]
@@ -183,6 +226,7 @@ def main():
     if st.session_state.navigation not in views:
         st.session_state.navigation = canonical_view(st.session_state.navigation)
     def navigate():
+        st.session_state.reset_scroll = True
         st.query_params.clear()
         st.query_params["view"] = st.session_state.navigation
     view = st.sidebar.radio("Explore", views, key="navigation", on_change=navigate)
@@ -197,6 +241,7 @@ def main():
         if st.button("Place your idea on the map", type="primary"):
             st.query_params.clear()
             st.session_state.pending_view = "Student"
+            st.session_state.reset_scroll = True
             st.rerun()
         st.write(f"{len(themes)} themes · {len(people)} faculty and researchers · {len(papers)} publications")
         search = st.text_input("Search themes")
@@ -212,6 +257,7 @@ def main():
             st.info("No themes match your search.")
 
     if view == "Themes" and (st.query_params.get("theme") or st.query_params.get("record")):
+        st.markdown('<div id="detail-anchor"></div>', unsafe_allow_html=True)
         ids = list(themes)
         selected = st.query_params.get("theme", ids[0])
         tid = st.selectbox("Theme", ids, index=ids.index(selected) if selected in ids else 0, format_func=lambda key: themes[key]["name"])
@@ -329,6 +375,28 @@ def main():
             student_card(student, score)
         if not students:
             st.info("No student posts are available.")
+
+    if st.session_state.pop("scroll_to_detail", False):
+        components.html(
+            f"<!-- detail navigation: {uuid4()} -->" + """
+            <script>
+            setTimeout(() => {
+                try {
+                    const doc = window.parent.document;
+                    const anchor = doc.getElementById("detail-anchor");
+                    if (anchor) {
+                        anchor.scrollIntoView({block: "start", behavior: "smooth"});
+                    } else {
+                        window.parent.scrollTo(0, doc.body.scrollHeight);
+                    }
+                } catch (error) {
+                    // Scrolling must never interrupt the page.
+                }
+            }, 150);
+            </script>
+            """,
+            height=0,
+        )
 
 
 if __name__ == "__main__":
