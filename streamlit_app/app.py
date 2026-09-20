@@ -174,6 +174,7 @@ def main():
             source_link("View source student record", local_link("Matches", record=f"student-{student['id']}"))
 
     st.sidebar.title("Orange Coauthor")
+    st.session_state["link_counts"] = {}
     views = ["Themes", "Student", "Faculty"]
     requested = canonical_view(st.query_params.get("view", "Themes"))
     if "pending_view" in st.session_state:
