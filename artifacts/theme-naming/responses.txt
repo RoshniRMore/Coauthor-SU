@@ -1,0 +1,50 @@
+﻿11|Symmetry Violation in Heavy Hadron Decays|Researchers measure rare heavy hadron decays and branching fractions to test particle symmetries and the Standard Model.
+12|Dynamic Spectrum Sharing in Wireless Networks|Researchers develop spectrum access models and interference controls that help wireless networks share radio frequencies efficiently.
+13|Whale Communication and Acoustic Monitoring|Researchers analyze whale calls to identify individuals, characterize behavior, and improve acoustic monitoring of marine populations.
+14|Fuel Flexibility in Solid Oxide Cells|Researchers investigate how fuel composition, cell materials, and operating conditions affect solid oxide fuel cell performance and emissions.
+15|Cultural Politics in Literature and Performance|Scholars examine how literature, visual art, music, and performance express political conflict and cultural change.
+16|Computational Models of Human Memory|Researchers develop and test models explaining how people retrieve information, recognize experiences, and learn categories.
+17|Physical Activity and Cardiovascular Health Across Adulthood|Researchers study walking intensity and exercise responses to understand cardiovascular health and physical activity across adult age groups.
+18|Reliability and Optimization in Engineering Design|Researchers develop methods for optimizing structural reliability and coordinating construction resources under uncertainty.
+19|Catalytic Materials for Sustainable Chemical Transformations|Researchers investigate molecular interactions and catalyst design to improve selective chemical reactions, pollutant degradation, and renewable feedstock conversion.
+20|Social Inequalities in Aging and Health|Researchers examine how economic hardship, racial inequality, and family support shape health and cognitive aging.
+21|Disease Surveillance and Pandemic Health Outcomes|Researchers use wastewater monitoring, forecasting, and population studies to track infectious disease and assess pandemic impacts.
+22|Homological Methods in Commutative Algebra|Mathematicians study algebraic resolutions and homological structures to characterize rings, ideals, and their invariants.
+23|Religious Art and Historical Memory|Scholars investigate how sacred imagery, material culture, and historical landscapes express religious meaning and political memory.
+24|Teaching Practices and Student Learning Experiences|Researchers evaluate instructional approaches and educational technologies to understand and improve student learning across disciplines.
+25|Geometric Analysis of Functions and Operators|Mathematicians investigate regularity, extension, and transformation properties of functions and operators in geometric and analytic settings.
+26|Policy Processes and Public Administration|Researchers examine how institutions, policy narratives, and public values shape policymaking and administrative practice.
+27|Endovascular Treatment of Cerebrovascular Disease|Researchers evaluate catheter techniques and endovascular therapies for ischemic stroke, cerebral aneurysms, and subdural hematomas.
+28|Consumer Behavior in Sports Markets|Researchers analyze how behavioral biases, fan engagement, and competition influence sports betting and consumption.
+29|Mechanics of Active Cytoskeletal Materials|Researchers investigate how molecular motors and biopolymer interactions generate forces, restructuring, and mechanical responses in biological materials.
+30|Privacy and Security in Machine Learning|Researchers develop privacy protections and defenses against adversarial threats in distributed learning and data systems.
+31|Lifestyle Interventions for Obesity and Diabetes|Researchers evaluate dietary and physical activity interventions to improve metabolic health and reduce obesity and diabetes risk.
+32|Political Ecology and Structures of Domination|Scholars examine how colonialism, nationalism, and unequal power shape environmental relationships and struggles for justice.
+33|Quantum Simulation of Fundamental Field Theories|Physicists use quantum computation and lattice methods to investigate field theories, gravity, and strongly interacting quantum systems.
+34|Root Microbiomes and Soil Fungal Ecology|Researchers study how plant roots, soil microbes, and environmental stress interact to shape nutrient cycling and fungal communities.
+35|Experimental Data from EMSL Research|This cluster contains experimental data records labeled as EMSL Project 60427, whose titles do not specify the underlying research topic.
+36|Digital Media Influence on Public Attitudes|Researchers examine how social media, misinformation, and media representation shape public trust, political attitudes, and audience behavior.
+37|Molecular Evolution of Animal Reproduction|Researchers investigate how reproductive proteins, gene regulation, and mating responses influence fertility and evolutionary change in model organisms.
+38|Scientific Collaboration and Research Data Networks|Researchers analyze data repositories and collaboration networks to understand scientific teamwork, research practices, and the durability of shared resources.
+39|Materials Engineering for Perovskite Solar Cells|Researchers modify perovskite compositions, surfaces, and interfaces to improve solar cell efficiency and stability.
+40|Distributed Sensing in Wireless Networks|Researchers develop collaborative detection, estimation, and resource allocation methods for wireless sensor and radar networks.
+41|Control of Supersonic Jet Flows|Researchers investigate active and passive strategies for controlling shear layers and flow dynamics in multistream supersonic jets.
+42|Agency and Responsibility in Philosophical Thought|Scholars explore agency, responsibility, and belief through philosophical arguments and studies of religion and politics.
+43|Secure and Scalable Distributed Data Systems|Researchers develop blockchain and cloud storage methods that improve processing efficiency while preserving data integrity and security.
+44|Trauma and Mental Health in Relationships|Researchers examine how interpersonal violence and trauma affect attachment, parenting, and mental health across family and romantic relationships.
+45|Occupant Behavior and Building Energy Performance|Researchers evaluate building controls and retrofits that reduce energy consumption while maintaining indoor air quality and thermal comfort.
+46|Disability Inclusion in Research and Society|Researchers investigate accessible research practices, disability rights, and community partnerships to improve participation and equity.
+47|Metabolic Regulation of Brain Health|Researchers investigate how lipid metabolism, cellular stress, and neural signaling contribute to obesity, neuroinflammation, and neurodegeneration.
+48|Multiagent Learning for Autonomous Wireless Systems|Researchers develop reinforcement learning methods that coordinate autonomous vehicles and wireless resources under communication and security constraints.
+49|Racial Inequality in Education and Institutions|Scholars examine how institutional racism, ethnic expectations, and social identities shape educational opportunity and lived experience.
+50|Geological Records of Past Climate Change|Researchers use lake sediments, geochemical proxies, and tectonic models to reconstruct past hydrological conditions and landscape evolution.
+51|Econometric Methods for Panel Data|Researchers develop statistical models and inference methods for analyzing repeated observations across individuals, organizations, or regions.
+52|Environmental Governance and Sustainability Transitions|Scholars investigate how institutions, civic action, and energy systems influence environmental policy and transitions toward sustainability.
+53|Physical Development and Fitness in Schoolchildren|Researchers compare physical activity, motor skills, growth, and obesity patterns among primary school children over time.
+54|Programmable Mechanics of Architectured Composite Materials|Researchers design composite structures with tunable stiffness, adhesion, and deformation to improve mechanical performance and enable new applications.
+55|Electrolyte Design for Calcium Batteries|Researchers investigate solvent chemistry and polymer electrolytes to understand calcium ion coordination, transport, and battery performance.
+56|Protein Interactions Driving Biomolecular Phase Separation|Researchers study how protein conformations and ligand interactions regulate the formation and properties of biomolecular condensates.
+57|Robust Statistical Inference for Complex Data|Researchers develop and evaluate estimation, causal inference, and model assessment methods for studies with uncertainty and complex data constraints.
+58|Machine Learning for Environmental Monitoring|Researchers apply machine learning to remote sensing and environmental measurements to map surface change and predict environmental conditions and heat strain.
+59|Curvature and Symmetry in Geometry|Mathematicians investigate how curvature, symmetry, and geometric transformations constrain the structure of manifolds and spaces.
+60|Library Education and Scholarly Communication|Scholars examine professional development, institutional change, and publishing practices in library and information science.

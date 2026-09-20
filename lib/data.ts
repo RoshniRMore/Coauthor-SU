@@ -26,6 +26,7 @@ const similarity = (a: number[], b: number[]) => a.reduce((sum, value, index) =>
 
 export function facultyMatches(queryVector: number[], fallback = false) {
   const vectors = fallback ? idx.fallback.vectors : idx.vectors;
+  const queryTheme = rankedThemes(queryVector, fallback)[0];
   return people.map(person => {
     const personVector = vectors.people[person.id as keyof typeof vectors.people] as number[];
     const signal = idx.signals[person.id as keyof typeof idx.signals];
@@ -40,16 +41,24 @@ export function facultyMatches(queryVector: number[], fallback = false) {
     const recency = Math.max(0, 1 - (new Date().getUTCFullYear() - signal.publication_recency) / 4);
     const output = Math.min(1, signal.recent_output / 8);
     const score = .55 * themeFit + .25 * directSimilarity + .12 * recency + .08 * output;
-    return {p: person, paper, signal, score, reason: idx.explanations[person.id as keyof typeof idx.explanations]};
+    const reason = paper && queryTheme
+      ? `${person.name}'s publication “${paper.title}” is their closest publication to your query, which lands in the ${queryTheme.name} theme.`
+      : 'No publication evidence is available for this query.';
+    return {p: person, paper, signal, score, reason};
   }).filter(match => match.paper).sort((a, b) => b.score - a.score).slice(0, 12);
+}
+
+function rankedThemes(vector: number[], fallback: boolean) {
+  const vectors = fallback ? idx.fallback.vectors : idx.vectors;
+  return idx.themes.map(theme => ({ ...theme, score: fallback
+    ? theme.representative_publications.reduce((sum, id) => sum + similarity(vector, vectors.publications[id]), 0) / Math.max(1, theme.representative_publications.length)
+    : similarity(vector, theme.centroid)
+  })).sort((a, b) => b.score - a.score);
 }
 
 export function queryMatches(vector: number[], fallback: boolean) {
   const vectors = fallback ? idx.fallback.vectors : idx.vectors;
-  const themes = [...idx.themes].map(theme => ({ ...theme, score: fallback
-    ? theme.representative_publications.reduce((sum, id) => sum + similarity(vector, vectors.publications[id]), 0) / Math.max(1, theme.representative_publications.length)
-    : similarity(vector, theme.centroid)
-  })).sort((a, b) => b.score - a.score).slice(0, 2).map(({centroid, ...theme}) => theme);
+  const themes = rankedThemes(vector, fallback).slice(0, 2).map(({centroid, ...theme}) => theme);
   const groups = [...idx.groups].map(group => ({ ...group,
     score: group.member_ids.reduce((sum, id) => sum + similarity(vector, vectors.people[id]), 0) / group.member_ids.length,
     theme_name: idx.themes.find(theme => theme.id === group.theme_id)?.name

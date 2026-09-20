@@ -11,6 +11,22 @@ npm run dev
 
 Open `http://localhost:3000`. To regenerate the checked-in fallback corpus and derived index, run `npm run data`.
 
+### Streamlit query expansion
+
+Run `python -m streamlit run streamlit_app/app.py` after installing `requirements.txt`.
+Set `OPENAI_API_KEY` in the environment or Streamlit secrets to expand student ideas
+into two or three academic sentences before matching against the existing TF-IDF
+index. The app uses the [OpenAI Responses API](https://developers.openai.com/api/reference/cli/resources/responses/methods/create)
+with `gpt-4.1-mini`; optionally set `OPENAI_QUERY_EXPANSION_MODEL` in the environment.
+Successful expansions are cached by exact input string in memory (up to 2,048 entries)
+and shown in a disclosure below the expansion notice. Missing credentials or failed
+requests produce a visible warning and use the original text. Queries with fewer
+than three non-zero vocabulary terms produce a request for a full sentence, with
+no match. This does not modify the corpus or rebuild the index.
+
+Run `python -m unittest discover -s scripts -p 'test_*.py'` for offline checks,
+including a simulated expansion of "Global Warming" against the real index.
+
 ## Data provenance
 
 The checked-in corpus contains 1,512 Syracuse-affiliated researchers and 10,779 publications from the OpenAlex public API, using Syracuse University institution `I70983195`. Experts@Syracuse (Elsevier Pure) was the intended source, but its routes sit behind a Cloudflare browser challenge. The scraper does not attempt to bypass that challenge and transparently falls back to OpenAlex.

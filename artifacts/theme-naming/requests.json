@@ -1,0 +1,1405 @@
+{
+  "instruction": "For every cluster, use its top 10 publication titles to write a coherent 4-to-8-word research-area name with no slashes or keyword lists, and a real sentence describing its research. Return name and description.",
+  "clusters": [
+    {
+      "id": "theme-11",
+      "key": "Xenova/all-MiniLM-L6-v2:W4414855136,W4412543468,W4415310116,W4410764111,W4416840533",
+      "publication_ids": [
+        "W4414855136",
+        "W4412543468",
+        "W4415310116",
+        "W4410764111",
+        "W4416840533",
+        "W4408734476",
+        "W4405912203",
+        "W4416933445",
+        "W4392576252",
+        "W4407318362"
+      ],
+      "titles": [
+        "Updated measurement of CP violation and polarisation in $$ {B}_s^0\\to J/\\psi {\\overline{K}}^{\\ast }{(892)}^0 $$ decays",
+        "Measurement of the branching fraction ratio RK at large dilepton invariant mass",
+        "Measurement of the B0 \u2192 \u03c1(770)0\u03b3 branching fraction",
+        "Evidence for B\u2212\u2192D**0\u03c4\u2212\u03bd\u03c4\u00af Decays",
+        "Search for the lepton-flavour-violating decays B0 \u2192 K*0\u03c4\u00b1e\u2213",
+        "Measurement of CP asymmetry in $$ {\\textrm{B}}_{\\textrm{s}}^0\\to {\\textrm{D}}_{\\textrm{s}}^{\\mp }{\\textrm{K}}^{\\pm } $$ decays",
+        "Measurement of \u039b b 0 , \u039b c + , and \u039b Decay Parameters Using \u039b b 0 \u2192 \u039b c + h \u2212 Decays",
+        "Observation of the Rare Baryonic Decay B + \u2192 p \u039b \u00af and Measurement of its Weak Decay Parameter",
+        "Amplitude analysis of the $$ {\\Lambda}_{\\textrm{b}}^0\\to {\\textrm{pK}}^{-}\\upgamma $$ decay",
+        "Measurement of the Branching Fraction Ratios R ( D + ) and R ( D * + ) Using Muonic \u03c4 Decays"
+      ]
+    },
+    {
+      "id": "theme-12",
+      "key": "Xenova/all-MiniLM-L6-v2:W4413679856,W4376480839,W4411799418,W4405014187,W4412930253",
+      "publication_ids": [
+        "W4413679856",
+        "W4376480839",
+        "W4411799418",
+        "W4405014187",
+        "W4412930253",
+        "W4393866154",
+        "W3199642849",
+        "W4205992585",
+        "W3210430867",
+        "W4396753545"
+      ],
+      "titles": [
+        "Cooperative Dynamic Spectrum Access for Large-Scale Networks Using Directional Antennas",
+        "Large-Scale Dynamic Spectrum Access with IEEE 1900.5.2 Spectrum Consumption Models",
+        "Scalable Dynamic Spectrum Access With IEEE 1900.5.2 Spectrum Consumption Models",
+        "28 GHz Phased Array Interference Measurements and Modeling for a NOAA Microwave Radiometer in Manhattan",
+        "Improving Spectrum Sharing in 6GHz with Spectrum Consumption Models",
+        "Scalable Dynamic Spectrum Access with IEEE 1900.5.2 Spectrum Consumption Models",
+        "A Spectrum Consumption Model-based Framework for DSA Experimentation on the COSMOS Testbed",
+        "Literature review of deploying small transmitters on a spectrum sharing scheme",
+        "A Spectrum Consumption Model-based Framework for DSA Experimentation on the COSMOS Testbed.",
+        "Nonlinear, Active, and Time-Varying Metasurfaces for Wireless Communications: A perspective and opportunities"
+      ]
+    },
+    {
+      "id": "theme-13",
+      "key": "Xenova/all-MiniLM-L6-v2:W4387696516,W7160932216,W4392750185,W4412968036,W7160922094",
+      "publication_ids": [
+        "W4387696516",
+        "W7160932216",
+        "W4392750185",
+        "W4412968036",
+        "W7160922094",
+        "W7160959569",
+        "W4229454134",
+        "W7160915126",
+        "W4389224209",
+        "W7160896395"
+      ],
+      "titles": [
+        "Caller identification and characterization of individual humpback whale acoustic behavior",
+        "Mid-summer fin whale ( Balaenoptera physalus ) call rate and repertoire in Southern New England",
+        "Caller identification and characterization of individual humpback whale acoustic behaviour",
+        "Detection, communication, and individual identification with deep audio embeddings: A case study with North Atlantic right whales",
+        "Expanding the North Atlantic right whale call library used in acoustic monitoring",
+        "Baleen whale CALLER ID: Evaluating the accelerometer method for caller identification in humpback whales",
+        "Autumn acoustic behavior of right whales in Southern New England waters",
+        "Insights into variability in call rate and call type in North Atlantic right whales by behavioral state",
+        "Acoustic recording tags provide insight into the springtime acoustic behavior of sei whales in Massachusetts Bay",
+        "Lombard effect in humpback whales in Hawai\u02bbi is context and call-type dependent"
+      ]
+    },
+    {
+      "id": "theme-14",
+      "key": "Xenova/all-MiniLM-L6-v2:W4283737430,W4387027316,W3158100849,W4210452911,W4210371274",
+      "publication_ids": [
+        "W4283737430",
+        "W4387027316",
+        "W3158100849",
+        "W4210452911",
+        "W4210371274",
+        "W4297310372",
+        "W4410593727",
+        "W4403647298",
+        "W3193433038",
+        "W4319588742"
+      ],
+      "titles": [
+        "Effects of Synthesis Gas Concentration, Composition, and Operational Time on Tubular Solid Oxide Fuel Cell Performance",
+        "Investigation of Ammonia as a Fuel for Solid Oxide Fuel Cells",
+        "Investigation of Rapid, Moderate Temperature Change Thermal Cycles of a Micro-Tubular Flame-Assisted Fuel Cell",
+        "Complex Material Behavior Seen With Novel Internal Cathode Tubular Solid Oxide Fuel Cells",
+        "Experimental Investigation of the Manufacturing of Porous Solid Oxide Fuel Cells",
+        "Internal Cathode Tubular Solid Oxide Fuel Cell Operating on Model Methane Combustion Exhaust",
+        "Buffer-layer solid oxide fuel cells for direct-ammonia operation: An analysis of electrical performance and exhaust composition",
+        "Investigation of NOx Generation and Ammonia Fuel Utilization in a Solid Oxide Fuel Cell",
+        "Experimental Investigation of a Novel Combined Rapid Compression-Ignition Combustion and Solid Oxide Fuel Cell System Format Operating on Diesel",
+        "Investigation of Emission Reduction and Power Generation on Electrochemical Catalytic Membranes With the Addition of Perovskite Nanocrystals"
+      ]
+    },
+    {
+      "id": "theme-15",
+      "key": "Xenova/all-MiniLM-L6-v2:W7141781104,W4386143815,W4392939765,W4405697038,W4318275385",
+      "publication_ids": [
+        "W7141781104",
+        "W4386143815",
+        "W4392939765",
+        "W4405697038",
+        "W4318275385",
+        "W7162671226",
+        "W4388233503",
+        "W4318306011",
+        "W4413008933",
+        "W4416905769"
+      ],
+      "titles": [
+        "Music Reviews",
+        "Jennifer Ponce De Le\u00f3n. Another Esthetics is Possible: Arts of Rebellion in the Fourth World War",
+        "Two Female Pessimists",
+        "Parodies of Pleasure: Remedios Varo\u2019s Queer Surrealism in Narrative and Painting",
+        "Introduction: New Shakespeare for a New Era",
+        "Yugodivas",
+        "Pauline Peretz",
+        "Syncopated Time: Staging the Restoration Tempest",
+        "L\u2019amour/la mort: The fragility of life in Mahamat Saleh Haroun\u2019s A Season in France",
+        "Les arts et les armes ? La politique culturelle am\u00e9ricaine en France durant la Guerre froide"
+      ]
+    },
+    {
+      "id": "theme-16",
+      "key": "Xenova/all-MiniLM-L6-v2:W4404165649,W7213270613,W4400773111,W4407504756,W4307826659",
+      "publication_ids": [
+        "W4404165649",
+        "W7213270613",
+        "W4400773111",
+        "W4407504756",
+        "W4307826659",
+        "W4410490689",
+        "W4409737395",
+        "W7200252290",
+        "W4390629296",
+        "W4391171926"
+      ],
+      "titles": [
+        "A Retrieved Context Model of Serial Recall and Free Recall",
+        "Memory Versus Generalization During Category Learning: An Extension of the Retrieving Effectively from Memory Model",
+        "Free Recall and Memory Search",
+        "Critical testing in recognition memory: Selective influence, single-item generalization, and the high-threshold hypothesis.",
+        "Associations supporting items gained and maintained across recall tests",
+        "Associations supporting items gained and maintained across recall tests",
+        "Temporal associations supporting repetitions in free recall",
+        "Mechanisms of the Test Position Effect in Recognition Memory",
+        "Retrieving effectively from source memory: Evidence for differentiation and local matching processes",
+        "Retrieving Effectively from Source Memory: Evidence for Differentiation and Local Matching Processes"
+      ]
+    },
+    {
+      "id": "theme-17",
+      "key": "Xenova/all-MiniLM-L6-v2:W4389137507,W4200410094,W3182571617,W3126232227,W3178144963",
+      "publication_ids": [
+        "W4389137507",
+        "W4200410094",
+        "W3182571617",
+        "W3126232227",
+        "W3178144963",
+        "W4387062656",
+        "W3183499707",
+        "W4319081596",
+        "W4294798371",
+        "W4399443757"
+      ],
+      "titles": [
+        "Cadence (steps/min) and relative intensity in 61 to 85-year-olds: the CADENCE-Adults study",
+        "Walking cadence (steps/min) and intensity in 61\u201385-year-old adults: the CADENCE-Adults study",
+        "THE RELATIONSHIP BETWEEN POST-EXERCISE HYPOTENSION AND HEART RATE VARIABILITY BEFORE AND AFTER TRAINING",
+        "Cadence (steps/min) and relative intensity in 21 to 60-year-olds: the CADENCE-adults study",
+        "Agreement Of Seated And Supine Pulse Wave Velocity Measurements With Prolonged Sitting",
+        "Leg Blood Flow Following Acute Exercise In Adults With A History Of COVID-19",
+        "The Relationship Between Cadence (steps/min) And Rating Of Perceived Exertion In Older Adults: The Cadence-Adults Study",
+        "The Relationship between Postexercise Hypotension and Heart Rate Variability before and after Exercise Training",
+        "PARASYMPATHATIC PREDOMINANCE IS ASSOCIATED WITH POSTEXERCISE HYPOTENSION BEFORE AND AFTER TRAINING AMONG ADULTS WITH HYPERTENSION",
+        "Can step count be used to identify older adults with high sedentary time and low moderate\u2010to\u2010vigorous physical activity?"
+      ]
+    },
+    {
+      "id": "theme-18",
+      "key": "Xenova/all-MiniLM-L6-v2:W3133376435,W3165367465,W4391981767,W4281778680,W4309759844",
+      "publication_ids": [
+        "W3133376435",
+        "W3165367465",
+        "W4391981767",
+        "W4281778680",
+        "W4309759844",
+        "W4407415794",
+        "W4220719138",
+        "W4317600381",
+        "W4403760362",
+        "W3169286534"
+      ],
+      "titles": [
+        "Structural System Reliability: Overview of Theories and Applications to Optimization",
+        "Reliability-Based Design Optimization of Structures Using Complex-Step Approximation with Sensitivity Analysis",
+        "Duration and Labor Resource Optimization for Construction Projects\u2014A Conditional-Value-at-Risk-Based Analysis",
+        "Exploit Social Distancing in Construction Scheduling: Visualize and Optimize Space\u2013Time\u2013Workforce Tradeoff",
+        "Space\u2013Time\u2013Workforce Visualization and Conditional Capacity Synthesis in Uncertainty",
+        "The Role of Geometry in MDO",
+        "Prioritizing collaborative scheduling practices based on their impact on project performance",
+        "An Integrated Design Environment for the Engineering Sketch Pad",
+        "Application of the maturity model for collaborative scheduling for construction projects",
+        "Reliability-Based Design Optimization of Structures Using the Second-Order Reliability Method and Complex-Step Derivative Approximation"
+      ]
+    },
+    {
+      "id": "theme-19",
+      "key": "Xenova/all-MiniLM-L6-v2:W4313253637,W4380244563,W4408077385,W4384817963,W7204797810",
+      "publication_ids": [
+        "W4313253637",
+        "W4380244563",
+        "W4408077385",
+        "W4384817963",
+        "W7204797810",
+        "W4412472245",
+        "W7197007016",
+        "W3134680418",
+        "W3133307854",
+        "W4389527284"
+      ],
+      "titles": [
+        "Observing Coordination and Reactivity between an Organohalide and Cesium Lead Halide Nanoparticles via DOSY and ROSY NMR",
+        "Investigating Coordination and Reactivity between an Organohalide and Cesium Lead Halide Nanoparticles via Two-Dimensional DOSY and ROSY NMR",
+        "Photoinduced Hydrogen Atom Transfer Catalysis with Ruthenium Polypyridyl Coated-TiO 2 Nanoparticles for Selective C\u2013C Bond Cleavage in a Lignin Model Compound",
+        "Quantitative Time-Resolved Visualization of Catalytic Degradation Reactions of Environmental Pollutants by Integrating Single-Drop Microextraction and Fluorescence Sensing",
+        "Active Sites in Motion: Principles, Materials Platforms, and Sustainable Applications in Heterogeneous Catalysis",
+        "Investigating the impacts of concentrated alkali metal poisons on the catalytic pyrolysis of biomass toward continuous processing of contaminated solid feedstocks",
+        "Structure\u2013Activity\u2013Selectivity Relationships in Heterogeneous Catalysis: Principles for Selective Chemical Manufacturing and Environmental Protection",
+        "Photocatalytic Chemoselective C\u2013C Bond Cleavage at Room Temperature in Dye-Sensitized Photoelectrochemical Cells",
+        "[Re(CO) 3 (5-PAN)Cl], a rhenium( i ) naphthalimide complex for the visible light photocatalytic reduction of CO 2",
+        "3\u2010Hydroxythiophenol\u2010Formaldehyde Resin Microspheres Modulated by Sulfhydryl Groups for Highly Efficient Photocatalytic Synthesis of H 2 O 2"
+      ]
+    },
+    {
+      "id": "theme-20",
+      "key": "Xenova/all-MiniLM-L6-v2:W4392502158,W7118065642,W4220682507,W4312104474,W4399363654",
+      "publication_ids": [
+        "W4392502158",
+        "W7118065642",
+        "W4220682507",
+        "W4312104474",
+        "W4399363654",
+        "W4210663395",
+        "W7118081804",
+        "W4405961873",
+        "W4385897779",
+        "W4312103177"
+      ],
+      "titles": [
+        "Age Differences in Experiences of Pandemic-Related Health and Economic Challenges Among Adults Aged 55 and Older",
+        "Household Food Insecurity and SNAP Dynamics: Implications for Cognitive Health and Well-Being in Later Life.",
+        "Enhancing the Utility of the Health and Retirement Study (HRS) to Identify Drivers of Rising Mortality Rates in the United States",
+        "FINANCIAL AND TIME HELP FROM ADULT CHILDREN DURING THE COVID-19 PANDEMIC",
+        "Racial\u2013Ethnic Gaps in Pandemic-Related Economic Hardship: Age Differences Among Older Adults",
+        "Self-Rated Physical Health Among Working-Aged Adults Along the Rural-Urban Continuum \u2014 United States, 2021",
+        "Time Help Received During Crisis: Variations by Older Adults\u2019 Cognitive Functioning",
+        "LIFE HISTORIES AND TRAJECTORIES OF PHYSIOLOGICAL FUNCTIONING AMONG OLDER RACIALIZED GROUPS IN THE US",
+        "Changes in late\u2010life assistance networks for Black and White older adults during the COVID \u201019 pandemic",
+        "PSYCHIATRIC HISTORY AND LATER-LIFE COGNITIVE CHANGE: EFFECT MODIFICATION BY SEX, RACE, AND ETHNICITY"
+      ]
+    },
+    {
+      "id": "theme-21",
+      "key": "Xenova/all-MiniLM-L6-v2:W4281835377,W4388087546,W4385754149,W3167965524,W4382656987",
+      "publication_ids": [
+        "W4281835377",
+        "W4388087546",
+        "W4385754149",
+        "W3167965524",
+        "W4382656987",
+        "W4289261700",
+        "W4402067059",
+        "W4220930716",
+        "W4413305884",
+        "W4285335519"
+      ],
+      "titles": [
+        "The prevalence of SARS-CoV-2 infection and other public health outcomes during the BA.2/BA.2.12.1 surge, New York City, April-May 2022",
+        "Wastewater surveillance provides 10-days forecasting of COVID-19 hospitalizations superior to cases and test positivity: A prediction study",
+        "Establishing a Statewide Wastewater Surveillance System in Response to the COVID-19 Pandemic: A Reliable Model for Continuous and Emerging Public Health Threats",
+        "Coupling freedom from disease principles and early warning from wastewater surveillance to improve health security",
+        "The prevalence of SARS-CoV-2 infection and other public health outcomes during the BA.2/BA.2.12.1 surge, New York City, April\u2013May 2022",
+        "The United States COVID-19 Forecast Hub dataset",
+        "COVID-19 hits care homes: A cross-national study of mortality rates",
+        "Coupling freedom from disease principles and early warning from wastewater surveillance to improve health security",
+        "How local health departments use wastewater surveillance data for public health planning and intervention in New York State",
+        "Rural-Urban Variation in COVID-19 Experiences and Impacts among U.S. Working-Age Adults"
+      ]
+    },
+    {
+      "id": "theme-22",
+      "key": "Xenova/all-MiniLM-L6-v2:W4408942744,W3197405172,W4416609085,W4404412302,W3198659449",
+      "publication_ids": [
+        "W4408942744",
+        "W3197405172",
+        "W4416609085",
+        "W4404412302",
+        "W3198659449",
+        "W4403128792",
+        "W4392948563",
+        "W4402772868",
+        "W3110161484",
+        "W3210483654"
+      ],
+      "titles": [
+        "Koszul homomorphisms and universal resolutions in local algebra",
+        "The Taylor resolution over a skew polynomial ring",
+        "Classifying thick subcategories over a Koszul complex via the curved BGG correspondence",
+        "Stable behavior of Frobenius powers over a general hypersurface",
+        "A comparison of dg algebra resolutions with prime residual characteristic",
+        "Relations between Poincar\u00e9 series for quasi-complete intersection homomorphisms",
+        "Bounds on cohomological support varieties",
+        "Transferring algebra structures on complexes",
+        "Canonical Resolutions over Koszul Algebras",
+        "Axial constants and sectional regularity of homogeneous ideals"
+      ]
+    },
+    {
+      "id": "theme-23",
+      "key": "Xenova/all-MiniLM-L6-v2:W7134807856,W7201293778,W4379507278,W7128705398,W3186163207",
+      "publication_ids": [
+        "W7134807856",
+        "W7201293778",
+        "W4379507278",
+        "W7128705398",
+        "W3186163207",
+        "W3184493127",
+        "W3185085583",
+        "W4312433954",
+        "W4294238437",
+        "W3093295431"
+      ],
+      "titles": [
+        "Vasari and the Sacred Image",
+        "VIOLENCE, DESTRUCTION, AND MEMORY: AN ARCHAEOLOGICAL APPROACH TO STATE TERRORISM IN DICTATORIAL CUBA (1952-1958)",
+        "Sheltering in Place",
+        ": Facing Crisis: Art as Politics in Fourteenth-Century Venice",
+        "Writing on Trees",
+        "Three Leaves: A Theopoetic Epilogue",
+        "In the Beginning, Trees",
+        ": Cultures of Empire: Rethinking Venetian Rule, 1400\u20131700; Essays in Honour of Benjamin Arbel",
+        "Conjunctions of Islam: rethinking the geographies of art and piety through the notebooks of Ahmet S\u00fcheyl \u00dcnver",
+        "Byzantine Tree Life: Christianity and the Arboreal Imagination"
+      ]
+    },
+    {
+      "id": "theme-24",
+      "key": "Xenova/all-MiniLM-L6-v2:W4414790186,W4413219088,W4409276815,W4413826210,W7126162501",
+      "publication_ids": [
+        "W4414790186",
+        "W4413219088",
+        "W4409276815",
+        "W4413826210",
+        "W7126162501",
+        "W4401313881",
+        "W7162286656",
+        "W4403529385",
+        "W4304778472",
+        "W4385560588"
+      ],
+      "titles": [
+        "Graduate Students as Adult Learners",
+        "Assessing the E2E Sustainable Propulsion Undergraduate Education and Research Program",
+        "Editorial: Global lesson study policy, practice, and research for advancing teacher and student learning in STEM",
+        "Assessing the Education to Engineering Sustainable Propulsion Undergraduate Education and Research Program",
+        "Applying a Think\u2010Pair\u2010Share ( TPS ) Structure to Asynchronous Online Discussions ( AODs ): A Mixed Methods Study",
+        "Improving an Online and Self-instruction Course: Students Expectancy and Auto-regulation",
+        "A Semester with Generative AI Tools: University Students Lived Experiences and Insights",
+        "Understanding Ourselves in Qualitative Research Through Collaborative Sense-making",
+        "Lesson Study in Introduction to International Relations",
+        "Machine Translation An Enduring Chasm between Language Students and Teachers"
+      ]
+    },
+    {
+      "id": "theme-25",
+      "key": "Xenova/all-MiniLM-L6-v2:W4407196412,W4391814738,W4380202712,W4406441182,W7127739497",
+      "publication_ids": [
+        "W4407196412",
+        "W4391814738",
+        "W4380202712",
+        "W4406441182",
+        "W7127739497",
+        "W4408422573",
+        "W4226200272",
+        "W4387267511",
+        "W3080394861",
+        "W3184897821"
+      ],
+      "titles": [
+        "On the Moduli of Lipschitz Homology Classes",
+        "Quasiregular Values and Rickman\u2019s Picard Theorem",
+        "Maps preserving the local reduced minimum modulus",
+        "Maps preserving the Aluthge transform of unitarily similar operators",
+        "Values of finite distortion: Reshetnyak's theorem, the Liouville theorem, and the Lusin (N) -property",
+        "Unitary similarity and the numerical radius preservers",
+        "On the Extension of Quasiplurisubharmonic Functions",
+        "The commutator of the Bergman projection on strongly pseudoconvex domains with minimal smoothness",
+        "The Sobolev Jordan-Sch\u00f6nflies problem",
+        "Energy-minimal Principles in Geometric Function Theory."
+      ]
+    },
+    {
+      "id": "theme-26",
+      "key": "Xenova/all-MiniLM-L6-v2:W4401523059,W4388594017,W4391614737,W4396897561,W4404247779",
+      "publication_ids": [
+        "W4401523059",
+        "W4388594017",
+        "W4391614737",
+        "W4396897561",
+        "W4404247779",
+        "W7138941187",
+        "W4398750777",
+        "W4399615946",
+        "W4388539417",
+        "W4413369505"
+      ],
+      "titles": [
+        "Editorial Introduction: Unveiling new dimensions in policy process theory research",
+        "Editorial introduction: Exploring policy theories, narratives, and policing",
+        "Editorial introduction: Charting new theoretical horizons here and elsewhere",
+        "Editorial introduction: Exploring the frontier of policy theory research",
+        "Editorial introduction: Policy actors, dynamics, and developments\u2014New insights from process theories and methodological applications",
+        "Editorial Introduction: Institutions, Attention, Narratives, and Policy Outcomes in the Policy Process",
+        "Replication Data for: How and When Democratic Values Matter: Challenging the Effectiveness Centric Framework in Program Evaluation",
+        "The government analytics handbook: Leveraging data to strengthen public administration. By DanielRogger, ChristianSchuster (Eds.), Washington, DC: World Bank. 2023. pp. 760. ISBN (paper): 978\u20101\u20104648\u20101957\u20105; ISBN (electronic): 978\u20101\u20104648\u20101981\u20100",
+        "How do academic public administration and public policy researchers affect policymaking? Functional groupings from survey data",
+        "Which Public Values are Most Important? Linking Political Ideology and Public Service Motivation to Public Values Preferences"
+      ]
+    },
+    {
+      "id": "theme-27",
+      "key": "Xenova/all-MiniLM-L6-v2:W4392461803,W4397006074,W4385398122,W4385398213,W4400893544",
+      "publication_ids": [
+        "W4392461803",
+        "W4397006074",
+        "W4385398122",
+        "W4385398213",
+        "W4400893544",
+        "W4385398202",
+        "W4385398583",
+        "W4392461645",
+        "W4392291501",
+        "W4396920142"
+      ],
+      "titles": [
+        "Abstract 201: Feasibility of an 088\u201d Catheter in the M1 segment for Mechanical Thrombectomy",
+        "Safety and clinical outcomes of endovascular therapy versus medical management in late presentation of large ischemic stroke",
+        "E-096 Safety of proximal coil occlusion in MMA embolization: experience in 137 cases",
+        "E-272 Novel use of a triple stent retriever \u2018bouquet\u2019 deployment with zoom 88 large-bore aspiration and walrus balloon-guide catheter flow arrest for definitive thrombectomy of a carotid free floating thrombus",
+        "E-112 P2Y12 inhibition in underrepresented female minorities undergoing flow diversion embolization for cerebral aneurysm treatment",
+        "E-067 Use of double-barrel stent retrievers with direct focal aspiration at bifurcation occlusions: the first report of two cases",
+        "E-188 Use of 10:1 glue hyper-dilution in middle meningeal artery embolization for chronic subdural hematomas: experience in 46 consecutive cases",
+        "Abstract 138: Use of a 046\u201d Intermediate Guide Catheter for Mini\u2010Triaxial Access in Flow Diversion: Multi\u2010institution Experience",
+        "Feasibility of super-bore 0.088\u2033 mechanical thrombectomy in M1 vessels smaller than 8 French: Experience in 20 consecutive cases",
+        "Outcomes of Bridging Intravenous Thrombolysis Versus Endovascular Therapy Alone in Late-Window Acute Ischemic Stroke"
+      ]
+    },
+    {
+      "id": "theme-28",
+      "key": "Xenova/all-MiniLM-L6-v2:W4225396485,W7164624390,W7155203403,W4296986468,W4223966447",
+      "publication_ids": [
+        "W4225396485",
+        "W7164624390",
+        "W7155203403",
+        "W4296986468",
+        "W4223966447",
+        "W3211296230",
+        "W7129349551",
+        "W7161624932",
+        "W4391671718",
+        "W7166717822"
+      ],
+      "titles": [
+        "Point shaving in NCAA Men\u2019s Basketball: Behavioral finance, scale, and deterrence",
+        "Cross-Sport Substitution Effects on NBA Betting Volume: Evidence from the 2024\u20132025 Regular Season",
+        "The Athlete Effect: Fame, Fans, and the Forces That Move Sport Markets",
+        "Behavioral Biases in Daily Fantasy Baseball: The Case of the Hot Hand",
+        "Estimating the effect of attendance on home advantage in the National Basketball Association",
+        "Can Esports Substitute Traditional Sports? The Convergence of Sports and Video Gaming during the Pandemic and Beyond",
+        "Hot Hand Effects: Analyzing MLB Starting Pitchers in Daily Fantasy Sports and Betting Markets",
+        "Linking Sport Simulation Games to Real-World Sport Consumption: The Role of Passion and Sport Enjoyment",
+        "Does every game matter? A new perspective on the league standing effect in major league baseball",
+        "From Micro-Level Cognition to Macroeconomic Realities"
+      ]
+    },
+    {
+      "id": "theme-29",
+      "key": "Xenova/all-MiniLM-L6-v2:W3212645987,W4287236228,W3159071031,W4385418362,W3154066095",
+      "publication_ids": [
+        "W3212645987",
+        "W4287236228",
+        "W3159071031",
+        "W4385418362",
+        "W3154066095",
+        "W4409343194",
+        "W4399506195",
+        "W4411988135",
+        "W4414878254",
+        "W7128531320"
+      ],
+      "titles": [
+        "Active cytoskeletal composites display emergent tunable contractility and restructuring",
+        "Active Cytoskeletal Composites Display Emergent Tunable Contractility and Restructuring",
+        "Active Cytoskeletal Composites Display Emergent Tunable Contractility and Restructuring",
+        "Kinesin and myosin motors compete to drive rich multiphase dynamics in programmable cytoskeletal composites",
+        "Active Cytoskeletal Composites Display Emergent Tunable Contractility and Restructuring",
+        "Kinesin\u2010Driven De\u2010Mixing of Cytoskeleton Composites Drives Emergent Mechanical Properties",
+        "Switchable microscale stress response of actin-vimentin composites emerges from scale-dependent interactions",
+        "Morphogenesis-on-chip: A minimal in vitro assay for cell intercalation highlights the importance of interfacial tension and migratory forces",
+        "Rigidity Governs Entrainment of Bacteria Cells in Biopolymer Scaffolds",
+        "Rigidity and Mechanical Response in Biological Structures"
+      ]
+    },
+    {
+      "id": "theme-30",
+      "key": "Xenova/all-MiniLM-L6-v2:W3170612894,W4409796129,W7163755097,W4402156866,W4392207908",
+      "publication_ids": [
+        "W3170612894",
+        "W4409796129",
+        "W7163755097",
+        "W4402156866",
+        "W4392207908",
+        "W3170034287",
+        "W4385767643",
+        "W4415195148",
+        "W3174841780",
+        "W4382395475"
+      ],
+      "titles": [
+        "A Privacy-Preserving and Trustable Multi-agent Learning Framework",
+        "Adaptive Intrusion Detection with PPO and Zero Trust Continuous Verification",
+        "Privacy aware synthetic building energy data for cross building generalization",
+        "QMGeo: Differentially Private Federated Learning via Stochastic Quantization with Mixed Truncated Geometric Distribution",
+        "SSPRA: A Robust Approach to Continuous Authentication Amidst Real-World Adversarial Challenges",
+        "Differentially Private Deep Learning under the Fairness Lens.",
+        "SF-PATE: Scalable, Fair, and Private Aggregation of Teacher Ensembles",
+        "You Don\u2019t Need Robust Machine Learning to Manage Adversarial Attack Risks",
+        "Bias and Variance of Post-processing in Differential Privacy",
+        "Hierarchical Over-the-Air Federated Learning with Differential Privacy"
+      ]
+    },
+    {
+      "id": "theme-31",
+      "key": "Xenova/all-MiniLM-L6-v2:W3211121221,W3133991197,W4402662959,W3187800771,W4389138900",
+      "publication_ids": [
+        "W3211121221",
+        "W3133991197",
+        "W4402662959",
+        "W3187800771",
+        "W4389138900",
+        "W7203599445",
+        "W4410741976",
+        "W4416528170",
+        "W4402974520",
+        "W4281626054"
+      ],
+      "titles": [
+        "Changes in OGTT \u2010derived biomarkers in response to lifestyle intervention among Latino adolescents with obesity",
+        "Effects of a 12-Week Lifestyle Intervention on Novel Biomarkers for Type 2 Diabetes (T2D) in Obese Latino Youth",
+        "Prevalence Of Supplementation, Nutrition Knowledge And Behaviors Among Physically Active College Students",
+        "Youth prediabetes and type 2 diabetes: Risk factors and prevalence of dysglycaemia",
+        "Position of the Academy of Nutrition and Dietetics: Medical Nutrition Therapy Behavioral Interventions Provided by Dietitians for Adults With Overweight or Obesity, 2024",
+        "Weight Loss and Engagement Among Active Users of a Dietitian-Led Digital Nutrition Platform: Retrospective Cohort Study",
+        "The impact of narratives and active video games among black and hispanic children with overweight and obesity: a randomized controlled trial",
+        "The effects of a 12-week lifestyle intervention on incretin response during an oral glucose tolerance test in Latino youth with obesity and impaired glucose tolerance",
+        "Vegetarian and Vegan Dietary Patterns to Treat Adult Type 2 Diabetes: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+        "346-OR: Race/Ethnicity-Specific Relationships of Physical Markers of Adiposity to Clamp-Measured Insulin Sensitivity (IS) and \u00df-Cell Function (\u00dfCF) in Obese Youth"
+      ]
+    },
+    {
+      "id": "theme-32",
+      "key": "Xenova/all-MiniLM-L6-v2:W4364376727,W4383551086,W4389283656,W4410053059,W4416751870",
+      "publication_ids": [
+        "W4364376727",
+        "W4383551086",
+        "W4389283656",
+        "W4410053059",
+        "W4416751870",
+        "W4323046745",
+        "W7161362923",
+        "W4415650058",
+        "W4399609990",
+        "W4296709377"
+      ],
+      "titles": [
+        "Political ecology III: Praxis - doing, undoing, and being in radical political ecology research",
+        "Aporias of North/South political ecologies",
+        "More\u2010than\u2010human supremacy: Himalayan lessons on cosmopolitics",
+        "Power",
+        "Weaponizing Nature, Naturalizing Violence: Anthropologies of Ecofascism",
+        "Geographies of nationalism",
+        "Preface for Challenging the Justifications of Domination Through Religion: \u201cWe Were Planting Corn, and They Were Planting Crosses\u201d (Part I).",
+        "Repairing epistemic injustice and loss in the era of climate coloniality",
+        "Peace Studies and the Limits to Growth",
+        "Living for the City: Social Change and Knowledge Production in the Central African Copperbelt by Miles Larmer"
+      ]
+    },
+    {
+      "id": "theme-33",
+      "key": "Xenova/all-MiniLM-L6-v2:W3111225984,W4313591722,W4393278759,W4396545110,W3128780668",
+      "publication_ids": [
+        "W3111225984",
+        "W4313591722",
+        "W4393278759",
+        "W4396545110",
+        "W3128780668",
+        "W4396676195",
+        "W4414815991",
+        "W4391376358",
+        "W4318821966",
+        "W4389260636"
+      ],
+      "titles": [
+        "Quantum algorithms for open lattice field theory",
+        "\u2019t Hooft anomalies for staggered fermions",
+        "Quantum Ising model on two-dimensional anti\u2013de Sitter space",
+        "Sachdev-Ye-Kitaev model on a noisy quantum computer",
+        "Newtonian binding from lattice quantum gravity",
+        "Simulating Field Theories with Quantum Computers",
+        "Bootstrapping supersymmetric (matrix) quantum mechanics",
+        "Fermions, quantum gravity, and holography in two dimensions",
+        "Entanglement filtering and improved coarse-graining on two dimensional tensor networks including fermions",
+        "Sachdev-Ye-Kitaev model on a noisy quantum computer"
+      ]
+    },
+    {
+      "id": "theme-34",
+      "key": "Xenova/all-MiniLM-L6-v2:W4408312374,W4292379765,W4389473105,W4400103417,W3151532324",
+      "publication_ids": [
+        "W4408312374",
+        "W4292379765",
+        "W4389473105",
+        "W4400103417",
+        "W3151532324",
+        "W4385800417",
+        "W4394031229",
+        "W4394059544",
+        "W4392284586",
+        "W4392297217"
+      ],
+      "titles": [
+        "The pH influence on ectomycorrhizal nitrogen acquisition and decomposition",
+        "Global patterns in endemicity and vulnerability of soil fungi",
+        "Linking root-associated fungal and bacterial functions to root economics",
+        "A common ericoid shrub modulates the diversity and structure of fungal communities across an arbuscular to ectomycorrhizal tree dominance gradient",
+        "The Rhizosphere Responds: Rich Fen Peat and Root Microbial Ecology after Long-Term Water Table Manipulation",
+        "Climate change\u2013induced stress disrupts ectomycorrhizal interaction networks at the boreal\u2013temperate ecotone",
+        "Global patterns in endemicity and vulnerability of soil fungi",
+        "Global patterns in endemicity and vulnerability of soil fungi",
+        "Linking root-associated fungal and bacterial functions to root economics",
+        "Linking root-associated fungal and bacterial functions to root economics"
+      ]
+    },
+    {
+      "id": "theme-35",
+      "key": "Xenova/all-MiniLM-L6-v2:W7204681673,W7204681819,W7204682460,W7204682658,W7204682727",
+      "publication_ids": [
+        "W7204681673",
+        "W7204681819",
+        "W7204682460",
+        "W7204682658",
+        "W7204682727",
+        "W7204683252",
+        "W7204683527",
+        "W7204684566",
+        "W7204684889",
+        "W7204684973"
+      ],
+      "titles": [
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024",
+        "Data for EMSL Project 60427 from May 2024"
+      ]
+    },
+    {
+      "id": "theme-36",
+      "key": "Xenova/all-MiniLM-L6-v2:W4385325063,W4392406645,W4380153736,W4318461583,W4409882460",
+      "publication_ids": [
+        "W4385325063",
+        "W4392406645",
+        "W4380153736",
+        "W4318461583",
+        "W4409882460",
+        "W4399054617",
+        "W4385298751",
+        "W4312225056",
+        "W4200193295",
+        "W4404358567"
+      ],
+      "titles": [
+        "Like-minded sources on Facebook are prevalent but not polarizing",
+        "REVISITING KEY CONCEPTS IN DIGITAL MEDIA RESEARCH: INFLUENCE, POPULISM, PARTISANSHIP, POLARISATION",
+        "Using Message Strategies to Attenuate the Effects of Disinformation on Credibility",
+        "Race and Ethnic Stereotypes in the Media",
+        "A Comparative Analysis of Real-Life Social Media Reactions to CSR Endorsements by Humanlike vs. Cartoonlike Virtual Influencers via Text Mining",
+        "How News Coverage of Misinformation Shapes Perceptions and Trust",
+        "How do social media feed algorithms affect attitudes and behavior in an election campaign?",
+        "Media, Diversity, and Representation in the U.S.: A Review of the Quantitative Research Literature on Media Content and Effects",
+        "Political Messaging Over Time: A Comparison of US Presidential Candidate Facebook Posts and Tweets in 2016 and 2020",
+        "What makes a super influencer? Testing the origin of fame theory in China"
+      ]
+    },
+    {
+      "id": "theme-37",
+      "key": "Xenova/all-MiniLM-L6-v2:W3204058754,W3127445456,W4379793712,W4382358502,W4210282801",
+      "publication_ids": [
+        "W3204058754",
+        "W3127445456",
+        "W4379793712",
+        "W4382358502",
+        "W4210282801",
+        "W4210349967",
+        "W4400569778",
+        "W3126549453",
+        "W3214547846",
+        "W4415275083"
+      ],
+      "titles": [
+        "Pronounced Postmating Response in the Drosophila Female Reproductive Tract Fluid Proteome",
+        "Drosophila female reproductive tract gene expression reveals coordinated mating responses and rapidly evolving tissue-specific genes",
+        "Essential and recurrent roles for hairpin RNAs in silencing de novo sex chromosome conflict in Drosophila simulans",
+        "Evolutionary Quantitative Proteomics of Reproductive Protein Divergence in Drosophila",
+        "Evolutionary quantitative proteomics of reproductive interactions in Drosophila",
+        "Drosophila female reproductive glands contribute to mating plug composition and the timing of sperm ejection",
+        "RNAi-dependent expression of sperm genes in ADL chemosensory neurons is required for olfactory responses in Caenorhabditis elegans",
+        "Drosophila oocyte proteome composition covaries with female mating status",
+        "Genetic coordination of sperm morphology and seminal fluid proteins promotes male reproductive success in Drosophila melanogaster",
+        "Poly(U) polymerase activity promotes establishment of primordial germ cells and limits somatic PGL granules in the Caenorhabditis elegans embryo"
+      ]
+    },
+    {
+      "id": "theme-38",
+      "key": "Xenova/all-MiniLM-L6-v2:W4211257569,W4306252973,W4410604853,W4398422872,W4200063563",
+      "publication_ids": [
+        "W4211257569",
+        "W4306252973",
+        "W4410604853",
+        "W4398422872",
+        "W4200063563",
+        "W4318147658",
+        "W4320024350",
+        "W3186735807",
+        "W4416259048",
+        "W7159552538"
+      ],
+      "titles": [
+        "The structural shift and collaboration capacity in GenBank Networks: A longitudinal study",
+        "Collaboration Networks and Career Trajectories: What Do Metadata from Data Repositories Tell Us?",
+        "Predicting the longevity of resources shared in scientific publications",
+        "GenBank collaboration network visualization: 1992-2018",
+        "Graphical integrity issues in open access publications: Detection and patterns of proportional ink violations",
+        "Evolutionary Archives: The Unlikely Comparison of GenBank and Know Your Meme",
+        "Analyzing a Data Science Online Practitioner Community: Trends and Implications for Data Science Project Management",
+        "MCS+ : An Efficient Algorithm for Crawling the Community Structure in Multiplex Networks",
+        "Measuring the integration of dataset contributors into the publication team: Metrics for assessing team integration in genomics and biomedicine and implications for citation impact and scientific capacity",
+        "A Data Model for Coordinated Care"
+      ]
+    },
+    {
+      "id": "theme-39",
+      "key": "Xenova/all-MiniLM-L6-v2:W7154828363,W4282837002,W4411471381,W3128255716,W4200190209",
+      "publication_ids": [
+        "W7154828363",
+        "W4282837002",
+        "W4411471381",
+        "W3128255716",
+        "W4200190209",
+        "W4388127171",
+        "W4386568613",
+        "W3158738688",
+        "W4210505222",
+        "W4388654289"
+      ],
+      "titles": [
+        "Surface engineered wide-bandgap all-inorganic perovskite solar cells achieve a fill factor exceeding 82%",
+        "Van der Waals Epitaxial Growth for High Performance Organic\u2010Free Perovskite Solar Cell: Experimental and Theoretical Insights",
+        "Synergistic Solvent and Surface Engineering to Reduce VOC Loss in Tin Halide Perovskite Solar Cells",
+        "Mitigating Open-Circuit Voltage Loss in Pb\u2013Sn Low-Bandgap Perovskite Solar Cells via Additive Engineering",
+        "Inorganic CsSnI3 Perovskite Solar Cells: The Progress and Future Prospects",
+        "Epitaxial Growth of Lead\u2010Free Double Perovskite Shell for CsPbX3/Cs2SnX6 (X = Cl, Br, and I) Core/Shell Perovskite Nanocrystals with Enhanced Photoelectric Properties and Stability",
+        "Thioacetamide\u2010Assisted Crystallization of Lead\u2010Free Perovskite Solar Cells for Improved Efficiency and Stability",
+        "Perovskite solar cells with embedded homojunction via nonuniform metal ion doping",
+        "Synergistic Approach toward Erbium-Passivated Triple-Anion Organic-Free Perovskite Solar Cells with Excellent Performance for Agrivoltaics Application",
+        "Interfacial B-Site Ion Diffusion in All-Inorganic Core/Shell Perovskite Nanocrystals"
+      ]
+    },
+    {
+      "id": "theme-40",
+      "key": "Xenova/all-MiniLM-L6-v2:W3092006567,W3201994719,W3128763991,W4390871660,W3171309520",
+      "publication_ids": [
+        "W3092006567",
+        "W3201994719",
+        "W3128763991",
+        "W4390871660",
+        "W3171309520",
+        "W4386918763",
+        "W3211252859",
+        "W4413679257",
+        "W4414054705",
+        "W4410639050"
+      ],
+      "titles": [
+        "Joint Collaboration and Compression Design for Random Signal Detection in Wireless Sensor Networks",
+        "Joint Collaboration and Compression Design for Distributed Sequential Estimation in a Wireless Sensor Network",
+        "Distributed Detection in Wireless Sensor Networks Under Multiplicative Fading via Generalized Score Tests",
+        "Resource Allocation for Distributed Multitarget Tracking in Radar Networks With Missing Data",
+        "Robust Linear Transceiver Designs for Vector Parameter Estimation in MIMO Wireless Sensor Networks Under CSI Uncertainty",
+        "Designing Local Quantizers for Distributed Detection of a Source With Unknown Location",
+        "Joint Activity Detection and Channel Estimation in Cell-Free Massive MIMO Networks With Massive Connectivity",
+        "Linear Sensor Collaboration for Distributed Parameter Estimation in the Presence of Communication Failures",
+        "One-Bit Direct Localization in Wireless Sensor Networks Over Rayleigh Fading Channels",
+        "Dynamic Transmit-Receive Beampattern Optimization of Colocated MIMO Radars for Multi-Target Tracking Under Suppression Jamming"
+      ]
+    },
+    {
+      "id": "theme-41",
+      "key": "Xenova/all-MiniLM-L6-v2:W4404020779,W4317597149,W3119023938,W4391302929,W4391302779",
+      "publication_ids": [
+        "W4404020779",
+        "W4317597149",
+        "W3119023938",
+        "W4391302929",
+        "W4391302779",
+        "W7126114473",
+        "W4391302824",
+        "W4292748734",
+        "W3119348096",
+        "W4410411954"
+      ],
+      "titles": [
+        "High-speed microactuation in a supersonic dual-stream jet flow",
+        "Active Control of a Multi-Stream Rectangular Supersonic Nozzle via Micro Jet Array",
+        "Toward a Passive Control Strategy for a Supersonic Multi-Stream Flow using Resolvent Analysis",
+        "Two-Dimensional Simulations of Multi-Stream Supersonic Jet Flow with Steady-Blowing Control",
+        "Experimental Efforts On the Control of a Multi-Stream Supersonic Rectangular Jet",
+        "Volumetric Experimental Characterization and Validation of a Supersonic Dual-Stream Rectangular Jet",
+        "Linear-operator-based input-output analysis of a supersonic multi-stream rectangular jet flow",
+        "Passive Control of Supersonic Shear Layer in Rectangular Multistream Jet",
+        "Effects of Geometric Modifications on a Complex Multi-Stream Supersonic Rectangular Nozzle",
+        "Optimal and Suboptimal Spatiotemporal Dynamics of Multi-Shear-Layers in Rectangular Jet"
+      ]
+    },
+    {
+      "id": "theme-42",
+      "key": "Xenova/all-MiniLM-L6-v2:W7167042355,W7167047556,W4312300792,W7213230198,W4387506677",
+      "publication_ids": [
+        "W7167042355",
+        "W7167047556",
+        "W4312300792",
+        "W7213230198",
+        "W4387506677",
+        "W4211174862",
+        "W4389411456",
+        "W4213420422",
+        "W4387478994",
+        "W3170361722"
+      ],
+      "titles": [
+        "CFP: Religion, Politics, and Cognitive Warfare: Information, Interpretation, Conspiracy, and the Struggle for Reality",
+        "CFP: Religion, Politics, and Cognitive Warfare: Information, Interpretation, Conspiracy, and the Struggle for Reality",
+        "Freedom and Responsibility in Neoplatonist Thought",
+        "Tukey\u2019s Warning and Pascal\u2019s Wager",
+        "Conclusion",
+        "Preface",
+        "Preface",
+        "Introduction",
+        "Introduction",
+        "The disappearing agent as an exclusion problem"
+      ]
+    },
+    {
+      "id": "theme-43",
+      "key": "Xenova/all-MiniLM-L6-v2:W4321608007,W4317038445,W4308430100,W4402156409,W4411337829",
+      "publication_ids": [
+        "W4321608007",
+        "W4317038445",
+        "W4308430100",
+        "W4402156409",
+        "W4411337829",
+        "W4415158164",
+        "W4402594834",
+        "W3215406573",
+        "W4392152422",
+        "W7171445161"
+      ],
+      "titles": [
+        "BlockExplorer: Exploring Blockchain Big Data Via Parallel Processing",
+        "Towards Saving Blockchain Fees via Secure and Cost-Effective Batching of Smart-Contract Invocations",
+        "Poster",
+        "An Efficient and Scalable Auditing Scheme for Cloud Data Storage Using an Enhanced B-Tree",
+        "Asymmetric Mempool DoS Security: Formal Definitions and Provable Secure Designs",
+        "Bridging Immutability with Flexibility: A Scheme for Secure and Efficient Smart Contract Upgrades",
+        "Maximizing Blockchain Performance: Mitigating Conflicting Transactions through Parallelism and Dependency Management",
+        "Authenticated key-value stores with hardware enclaves",
+        "Towards Immutability: A Secure and Efficient Auditing Framework for Cloud Supporting Data Integrity and File Version Control",
+        "Multi-Tenant Data Architecture for Real-Time AI Workloads with Role-Based Compliance Enforcement"
+      ]
+    },
+    {
+      "id": "theme-44",
+      "key": "Xenova/all-MiniLM-L6-v2:W4327584450,W4396532518,W4387741583,W4402521908,W7204993340",
+      "publication_ids": [
+        "W4327584450",
+        "W4396532518",
+        "W4387741583",
+        "W4402521908",
+        "W7204993340",
+        "W3189343956",
+        "W4310775478",
+        "W4387928038",
+        "W4393164496",
+        "W4289835673"
+      ],
+      "titles": [
+        "Maternal depressive symptoms and physical intimate partner violence and children\u2019s internalizing and externalizing behaviors in Guyanese families: Mediating role of constructive conflict behavior.",
+        "The impact of trauma on the self-esteem of African American Adolescents: Moderating effects of boundaries in parent- adolescent relationships",
+        "The Impact of PTSD and Depression on Romantic Attachment Within Incarcerated Romantic Relationships",
+        "Understanding the link between intimate partner violence exposure and children's self\u2010regulation: The mediating role of parenting stress and warmth",
+        "Romantic Attachment and Symptoms of Depression and PTSD Among Incarcerated Men: A Longitudinal Study",
+        "Interpersonal Victimization, Substance Use, and Mental Health Among Sexual and Gender Minority Youth: The Role of Self-concept Factors",
+        "Help-Seeking for Severe Intimate Partner Violence Among Sexual and Gender Minority Adolescents and Young Adults Assigned Female at birth: A Latent Class Analysis",
+        "Exploring the complex links between childhood exposure to intimate partner violence, maltreatment, and self-regulation: A three-wave cross-lagged study",
+        "Exploring Gender Moderation: The Impact of Neighborhood Factors on Adolescent Internalizing and Externalizing Symptoms",
+        "Support-seeking and active coping mitigate the association between posttrauma symptom severity and attachment insecurity in a community sample of trauma survivors."
+      ]
+    },
+    {
+      "id": "theme-45",
+      "key": "Xenova/all-MiniLM-L6-v2:W4200332596,W7164050105,W7203732174,W3155566494,W4411398139",
+      "publication_ids": [
+        "W4200332596",
+        "W7164050105",
+        "W7203732174",
+        "W3155566494",
+        "W4411398139",
+        "W4200275401",
+        "W4411405937",
+        "W4384337878",
+        "W3205077726",
+        "W4392628984"
+      ],
+      "titles": [
+        "Develop a New Approach to Evaluate Energy Savings, Thermal Comfort and IAQ from Occupant-Centric Building Controls",
+        "Integrated Evaluation of Energy Performance, Indoor Environmental Quality and Building Envelope Performance in Retrofitted Multifamily Residential Buildings",
+        "Post-retrofit building performance dataset: Energy, IEQ, HVAC operation, and occupant behavior in university apartment buildings",
+        "Energy-saving potential evaluation for primary schools with occupant-centric controls",
+        "Energy consumption and IEQ monitoring in two university apartment buildings: Pre-retrofit dataset",
+        "Quantifying the nationwide HVAC energy savings in large hotels: the role of occupant-centric controls",
+        "Toward occupant-centric building retrofits: an integrated protocol for real-time monitoring of building energy use, indoor environmental quality, and enclosure performance pre- and post-retrofitting",
+        "ASHRAE URP-1883: Development and Analysis of the ASHRAE Global Occupant Behavior Database",
+        "HVAC energy savings, thermal comfort and air quality for occupant-centric control through a side-by-side experimental study",
+        "Predicting air infiltration and window state in residential dorms using deep neural networks coupled with energyplus"
+      ]
+    },
+    {
+      "id": "theme-46",
+      "key": "Xenova/all-MiniLM-L6-v2:W3199245500,W7169610261,W4387764983,W4415651951,W4385217723",
+      "publication_ids": [
+        "W3199245500",
+        "W7169610261",
+        "W4387764983",
+        "W4415651951",
+        "W4385217723",
+        "W4210887681",
+        "W4402856918",
+        "W4400378376",
+        "W3211349049",
+        "W4412928662"
+      ],
+      "titles": [
+        "Facilitating the inclusion of adults with intellectual disability as direct respondents in research: Strategies for fostering trust, respect, accessibility and engagement",
+        "Disability in Divisive Times: An Exploration of the Present and Future of Research on Disabilities",
+        "Disability rights and empowerment: Reflections on AJCP research and a call to action",
+        "Disability data: a case study in research limitation transparency",
+        "Accommodation Woes: Employer Perspectives on Disability Access",
+        "Circles of Support and Self-Direction: An Interview Highlighting a Journey of Friendship and Managing Services",
+        "Disability inclusion in national surveys",
+        "Disability Inclusion in National Surveys",
+        "Creating academic-community partnerships to jointly enhance advocacy and research on violence and disability: Two case examples.",
+        "A call to action to include disability in intersectional health equity research and policy"
+      ]
+    },
+    {
+      "id": "theme-47",
+      "key": "Xenova/all-MiniLM-L6-v2:W4412058816,W4412605100,W4400148909,W4406400216,W4407383753",
+      "publication_ids": [
+        "W4412058816",
+        "W4412605100",
+        "W4400148909",
+        "W4406400216",
+        "W4407383753",
+        "W3211867223",
+        "W4286498710",
+        "W4398184158",
+        "W4406456922",
+        "W4411036232"
+      ],
+      "titles": [
+        "Palmitic acid\u2013induced autolysosomal dysfunction and lipotoxicity in neuroinflammation and neurodegeneration",
+        "Hindbrain octadecaneuropeptide gliotransmission as a therapeutic target for energy balance control without nausea or emesis",
+        "Transcriptomic Analyses of Eicosapentaenoic Acid Effects in Adipose Tissue and Cortex From High Fat Diet-Induced Obese Amyloidogenic Alzheimer Disease Mice",
+        "Nrf2 Regulates Basal Glutathione Production in Astrocytes",
+        "Editorial: Lipid metabolism dysregulation in obesity-related diseases and neurodegeneration",
+        "Hyperexcitability and brain morphological differences in mice lacking the cystine/glutamate antiporter, system x c \u2212",
+        "Developing Photoaffinity Probes for Dopamine Receptor D2 to Determine Targets of Parkinson\u2019s Disease Drugs",
+        "The Novel Chimeric Multi-Agonist Peptide (GEP44) Reduces Energy Intake and Body Weight in Male and Female Diet-Induced Obese Mice in a Glucagon-Like Peptide-1 Receptor-Dependent Manner",
+        "Therapeutic targeting of obesity-induced neuroinflammation and neurodegeneration",
+        "Arsenite-Mediated Transcriptional Regulation of Glutathione Synthesis in Mammalian Primary Cortical Astrocytes"
+      ]
+    },
+    {
+      "id": "theme-48",
+      "key": "Xenova/all-MiniLM-L6-v2:W4407246786,W7198528551,W4388756548,W4402570948,W4417491122",
+      "publication_ids": [
+        "W4407246786",
+        "W7198528551",
+        "W4388756548",
+        "W4402570948",
+        "W4417491122",
+        "W3216388332",
+        "W7152703904",
+        "W4413967841",
+        "W4407783206",
+        "W3191601385"
+      ],
+      "titles": [
+        "Deep Reinforcement Learning for Rechargeable AAV-Assisted Data Collection From Dense Mobile Sensor Nodes",
+        "Learning under Information and Experience Constraints in Multi-Agent Reinforcement Learning",
+        "Robust Network Slicing: Multi-Agent Policies, Adversarial Attacks, and Defensive Strategies",
+        "Research on Autonomous Robots Navigation based on Reinforcement Learning",
+        "Robust Learning-Based Detection with Cost Control and Byzantine Mitigation",
+        "Dynamic Channel Access and Power Control in Wireless Interference Networks via Multi-Agent Deep Reinforcement Learning",
+        "Communication Efficient Multi-Agent Systems using BEliefbased Predictive Auxiliary Learning",
+        "Data Collection with Multiple UAVs via Multi-Agent Reinforcement Learning",
+        "Federated Multi-Agent Reinforcement Learning for AoI Minimization in UAV-Enabled IoV-MEC Systems",
+        "Learning-Based UAV Trajectory Optimization with Collision Avoidance and Connectivity Constraints"
+      ]
+    },
+    {
+      "id": "theme-49",
+      "key": "Xenova/all-MiniLM-L6-v2:W4402894024,W3191876705,W4402920924,W4295886368,W4226172099",
+      "publication_ids": [
+        "W4402894024",
+        "W3191876705",
+        "W4402920924",
+        "W4295886368",
+        "W4226172099",
+        "W4379526165",
+        "W4402336001",
+        "W4387119921",
+        "W3169763128",
+        "W4396574788"
+      ],
+      "titles": [
+        "The associations among racial and ethnic identity and perceptions of professors, support, and mental wellbeing in schools of social work",
+        "From the Personal to the Global: Engaging with and Enacting DisCrit Theory Across Multiple Spaces",
+        "Work should not be killing us: Understanding the racial battle fatigue minefield for black women in higher education",
+        "Bans and Signals: Racial and Ethnic Differences in Applications to Elite Public Colleges in States With and Without Affirmative Action",
+        "Measuring Ethnic Diversity",
+        "Mass Incarceration and Microaggressions: America\u2019s Modern Day Slavery",
+        "The Culture Trap: Ethnic Expectations and Unequal Schooling for Black Youth",
+        "The Modern Regularity of Institutionalized Racism Towards Black Americans",
+        "Perceptions of success among working-class children of immigrants in three cities",
+        "The politics of allyship: Multiethnic coalitions and mass attitudes toward protest"
+      ]
+    },
+    {
+      "id": "theme-50",
+      "key": "Xenova/all-MiniLM-L6-v2:W4408485846,W4394694256,W4399566069,W3138929569,W4297973504",
+      "publication_ids": [
+        "W4408485846",
+        "W4394694256",
+        "W4399566069",
+        "W3138929569",
+        "W4297973504",
+        "W4225139275",
+        "W4313528584",
+        "W7202129581",
+        "W4392758808",
+        "W4387187980"
+      ],
+      "titles": [
+        "Insights from a promising lacustrine archive for reconstructing Pliocene hydroclimate in the Eastern Mediterranean: the Erk-el-Ahmar paleolake",
+        "Pleistocene shifts in Great Basin hydroclimate seasonality govern the formation of lithium-rich paleolake deposits",
+        "Pleistocene shifts in Great Basin hydroclimate seasonality govern the formation of lithium-rich paleolake deposits",
+        "The Case for Tectonic Control on Erosional Exhumation on the Tropical Northern Andes Based on Thermochronology Data",
+        "Biomarker and Pollen Evidence for Late Pleistocene Pluvials in the Mojave Desert",
+        "Biomarker and pollen evidence for late Pleistocene pluvials in the Mojave Desert",
+        "A Pliocene Precipitation Isotope Proxy\u2010Model Comparison Assessing the Hydrological Fingerprints of Sea Surface Temperature Gradients",
+        "Climate-Rift Interactions and Stratigraphic Record of Long-Lived Lakes: Model Results and Subsurface Observations from The East Africa Rift",
+        "Modeling inherited structures and their effects on strain localization during continental rifting",
+        "Plio\u2010Pleistocene Southwest African Hydroclimate Modulated by Benguela and Indian Ocean Temperatures"
+      ]
+    },
+    {
+      "id": "theme-51",
+      "key": "Xenova/all-MiniLM-L6-v2:W1495656322,W3137139463,W2581468364,W4237674882,W4414812384",
+      "publication_ids": [
+        "W1495656322",
+        "W3137139463",
+        "W2581468364",
+        "W4237674882",
+        "W4414812384",
+        "W3136957980",
+        "W4312837882",
+        "W4391426528",
+        "W4312733224",
+        "W3139059314"
+      ],
+      "titles": [
+        "Econometric Analysis of Panel Data",
+        "Limited Dependent Variables and Panel Data",
+        "Dynamic Panel Data Models",
+        "Spatial Panel Data Models",
+        "Productivity, Panel Data and Applied Econometrics: A Special Issue of Empirical Economics in Honor of Robin C. Sickles",
+        "Unbalanced Panel Data Models",
+        "The General Linear Model: The Basics",
+        "Random Effects Models",
+        "Seemingly Unrelated Regressions",
+        "Test of Hypotheses with Panel Data"
+      ]
+    },
+    {
+      "id": "theme-52",
+      "key": "Xenova/all-MiniLM-L6-v2:W4389409757,W4323316449,W3125788594,W4392546018,W4388611326",
+      "publication_ids": [
+        "W4389409757",
+        "W4323316449",
+        "W3125788594",
+        "W4392546018",
+        "W4388611326",
+        "W4385691013",
+        "W4362734588",
+        "W4404535657",
+        "W4297538188",
+        "W4414261796"
+      ],
+      "titles": [
+        "Dynamic Sustainability",
+        "Editorial: Institutional adaptation and transformation for climate resilience",
+        "The \u201claborless fuel\u201d: Landscape, energy transitions and natural gas in the postwar U.S.",
+        "All hands on deck: the role of collaborative platforms and lead organizations in achieving environmental goals",
+        "Relational environmental governance: A critical framework for praxis with the material world",
+        "Diverse values of nature for sustainability",
+        "The emerging role of mega-urban regions in the sustainability of global production-consumption systems",
+        "Local Government Environmental Policy Innovation: Emerging Regulation of GHG Emissions in the Transportation-for-Hire Industry",
+        "Introduction: Uneven geographies of electricity capital",
+        "Saving the \u201clungs of the city\u201d: emerging civic action in urban environmental policy: case studies from Tampere, Finland and Worcester, Massachusetts"
+      ]
+    },
+    {
+      "id": "theme-53",
+      "key": "Xenova/all-MiniLM-L6-v2:W4413398013,W4404919474,W4413424129,W4404905177,W4413397891",
+      "publication_ids": [
+        "W4413398013",
+        "W4404919474",
+        "W4413424129",
+        "W4404905177",
+        "W4413397891",
+        "W4413409896",
+        "W4413409903",
+        "W4413424041",
+        "W4413424079",
+        "W4413398005"
+      ],
+      "titles": [
+        "Introdu\u00e7\u00e3o",
+        "Mudan\u00e7as nos n\u00edveis de atividade f\u00edsica",
+        "Diferen\u00e7as no desempenho das habilidades motoras fundamentais em crian\u00e7as do 1\u00ba ano do 1\u00ba ciclo do ensino b\u00e1sico matriculadas no ano letivo de 2021-2022 e de 2023-2024",
+        "Conclus\u00f5es",
+        "O desenho do projeto REACT",
+        "Mudan\u00e7as nas preval\u00eancias de sobrepeso e obesidade em crian\u00e7as do 1\u00ba ciclo do ensino b\u00e1sico",
+        "Mudan\u00e7as nos n\u00edveis de aptid\u00e3o f\u00edsica em crian\u00e7as do 1\u00ba ciclo do ensino b\u00e1sico de Matosinhos",
+        "Diferen\u00e7as nos n\u00edveis de aptid\u00e3o f\u00edsica de crian\u00e7as do 1\u00ba ano do 1\u00ba ciclo do ensino b\u00e1sico matriculadas no ano letivo de 2021-2022 e de 2023-2024",
+        "Diferen\u00e7as no crescimento, no sobrepeso e obesidade em crian\u00e7as do 1\u00ba ano do 1\u00ba ciclo do ensino b\u00e1sico matriculadas no ano letivo de 2021/2022 e de 2023/2024",
+        "Compara\u00e7\u00e3o dos resultados das crian\u00e7as Matosinhenses com os de outras amostras do pa\u00eds e do estrangeiro bem como da Organiza\u00e7\u00e3o Mundial de Sa\u00fade e Centro de Controlo e Preven\u00e7\u00e3o de Doen\u00e7as dos Estados Unidos"
+      ]
+    },
+    {
+      "id": "theme-54",
+      "key": "Xenova/all-MiniLM-L6-v2:W4414107580,W4406472051,W4319588200,W4210508324,W4205465549",
+      "publication_ids": [
+        "W4414107580",
+        "W4406472051",
+        "W4319588200",
+        "W4210508324",
+        "W4205465549",
+        "W4221136096",
+        "W4405826005",
+        "W4319789342",
+        "W7138904270",
+        "W4416598357"
+      ],
+      "titles": [
+        "In-plane vs. out-of-plane auxetic architecture: Uncoupling tensile strength and indentation resistance of layered composite structures",
+        "Stiff, lightweight, and programmable architectured pyrolytic carbon lattices via modular assembling",
+        "Utilizing Bilayer Shrinkage to Assemble Complex Ceramic Shapes",
+        "Dynamically Tunable Dry Adhesion through a Subsurface Thin Layer with Tunable Stiffness",
+        "Robust Bicontinuous Elastomer\u2013Metal Foam Composites with Highly Tunable Stiffness",
+        "Correlation-function-based microstructure design of alloy-polymer composites for dynamic dry adhesion tuning in soft gripping",
+        "The Structure\u2010Mechanics Relationship of Bamboo\u2010Epidermis and Inspired Composite Design by Artificial Intelligence",
+        "Large Biaxial Recovered Strains in Self\u2010Shrinking 3D Shape\u2010Memory Polymer Parts Programmed via Printing with Application to Improve Cell Seeding",
+        "Auxetic dimensionality governs impact resilience in composite laminates",
+        "Machine learning-enabled inverse design of bioinspired layered composite structures with maximum auxetic performance"
+      ]
+    },
+    {
+      "id": "theme-55",
+      "key": "Xenova/all-MiniLM-L6-v2:W4233745623,W4256435047,W3209876739,W4240927137,W4385838381",
+      "publication_ids": [
+        "W4233745623",
+        "W4256435047",
+        "W3209876739",
+        "W4240927137",
+        "W4385838381",
+        "W3204628422",
+        "W4243180068",
+        "W4243851151",
+        "W4232635631",
+        "W3172312600"
+      ],
+      "titles": [
+        "Why Is Tetrahydrofuran a Good Solvent for Calcium Batteries? Insights From Ab Initio Molecular Dynamics Simulations",
+        "Why Is Tetrahydrofuran a Good Solvent for Calcium Batteries? Insights From Ab Initio Molecular Dynamics Simulations",
+        "Why Is Tetrahydrofuran a Good Solvent for Calcium Batteries? Insights From Ab Initio Molecular Dynamics Simulations",
+        "Why Is Tetrahydrofuran a Good Solvent for Calcium Batteries? Insights From Ab Initio Molecular Dynamics Simulations",
+        "Polyvinylidene Fluoride-Based Gel Polymer Electrolytes for Calcium Ion Conduction: A Study of the Influence of Salt Concentration and Drying Temperature on Coordination Environment and Ionic Conductivity",
+        "A Computational Study on the Ca2+ Solvation, Coordination Environment, and Mobility in Electrolytes for Calcium Ion Batteries",
+        "A Computational Study on the Ca2+ Solvation, Coordination Environment, and Mobility in Electrolytes for Calcium Ion Batteries",
+        "A Computational Study on the Ca2+ Solvation, Coordination Environment, and Mobility in Electrolytes for Calcium Ion Batteries",
+        "A Computational Study on the Ca2+ Solvation, Coordination Environment, and Mobility in Electrolytes for Calcium Ion Batteries",
+        "Gel Polymer Electrolytes Based on Cross-Linked Poly(ethylene glycol) Diacrylate for Calcium-Ion Conduction"
+      ]
+    },
+    {
+      "id": "theme-56",
+      "key": "Xenova/all-MiniLM-L6-v2:W4225415044,W4324131168,W3165462289,W3129572604,W7126252314",
+      "publication_ids": [
+        "W4225415044",
+        "W4324131168",
+        "W3165462289",
+        "W3129572604",
+        "W7126252314",
+        "W4379377637",
+        "W4312197836",
+        "W7160499769",
+        "W7140210787",
+        "W7138155040"
+      ],
+      "titles": [
+        "Effects of Modulating Multivalent Ligand Binding Accessibility & Affinity on Liquid\u2010Liquid Phase Separation",
+        "Decoding optimal ligand design for multicomponent condensates",
+        "Previously uncharacterized interactions between the folded and intrinsically disordered domains impart asymmetric effects on UBQLN2 phase separation",
+        "Previously uncharacterized interactions between the folded and intrinsically disordered domains impart asymmetric effects on UBQLN2 phase separation",
+        "Conformational landscapes resolved by ion mobility mass spectrometry reveal differential mechanisms of polyubiquitin-controlled phase separation",
+        "Ion Mobility Mass Spectrometry Unveils Global Protein Conformations in Response to Conditions that Promote and Reverse Liquid\u2013Liquid Phase Separation",
+        "Ion mobility mass spectrometry unveils global protein conformations in response to conditions that promote and reverse liquid-liquid phase separation",
+        "Conformational landscapes resolved by ion mobility mass spectrometry reveal mechanisms of polyubiquitin-controlled phase separation",
+        "Conformational landscapes resolved by ion mobility mass spectrometry reveal differential mechanisms of polyubiquitin-controlled phase separation",
+        "Intramolecular interactions between folded and disordered regions shape ubiquilin structure and function"
+      ]
+    },
+    {
+      "id": "theme-57",
+      "key": "Xenova/all-MiniLM-L6-v2:W4392637661,W3158863887,W4396864115,W3167815710,W4402974996",
+      "publication_ids": [
+        "W4392637661",
+        "W3158863887",
+        "W4396864115",
+        "W3167815710",
+        "W4402974996",
+        "W4414487712",
+        "W3119544190",
+        "W3124545040",
+        "W4313400546",
+        "W4280557016"
+      ],
+      "titles": [
+        "Evaluating the Robustness of Parameter Estimates in Cognitive Models: A Meta-Analytic Review of Multinomial Processing Tree Models Across the Multiverse of Estimation Methods",
+        "A semiparametric method for evaluating causal effects in the presence of error\u2010prone covariates",
+        "TESTING LIMITED OVERLAP",
+        "Limited Dependent Variables and Discrete Choice Modelling",
+        "Incorporating costs and benefits to the evaluation of uncertain research results: Applications to cancer research funding",
+        "Subset Selection with Curtailment Among Treatments with Two Binary Endpoints in Comparison with a Control",
+        "Fixed-k Inference for Conditional Extremal Quantiles",
+        "Consistent Estimation of Panel Data Sample Selection Models",
+        "Rule selection invariance as a robustness check in collective choice and nonparametric statistical settings",
+        "Statistics in the Service of Science: Don\u2019t Let the Tail Wag the Dog"
+      ]
+    },
+    {
+      "id": "theme-58",
+      "key": "Xenova/all-MiniLM-L6-v2:W4403439933,W4362524295,W4417229425,W4205422774,W4206314529",
+      "publication_ids": [
+        "W4403439933",
+        "W4362524295",
+        "W4417229425",
+        "W4205422774",
+        "W4206314529",
+        "W4285174584",
+        "W4405934273",
+        "W4220740799",
+        "W4401389178",
+        "W4391689902"
+      ],
+      "titles": [
+        "Revolutionizing Land Cover Analysis: A Systematic Review of Geospatial Intelligence with Classification and Segmentation",
+        "Mapping floods from remote sensing data and quantifying the effects of surface obstruction by clouds and vegetation",
+        "Improving Heat Strain Prediction in Construction Workers: A Transfer Learning Approach to Overcome Variability Challenges",
+        "The GRRIEn Analysis Framework: effective supervised learning of earth surface processes at large spatial scales.",
+        "Data Generation for Rare Transient Events: A Generative Adversarial Network Approach",
+        "Heterogeneity-Aware Recurrent Neural Network for Hyperspectral and Multispectral Image Fusion",
+        "A Copula-Guided In-Model Interpretable Neural Network for Change Detection in Heterogeneous Remote Sensing Images",
+        "A review of machine learning in geochemistry and cosmochemistry: Method improvements and applications",
+        "Worker-centric heat strain analysis: Integrating physiological signals with ensemble learning and domain adaptation",
+        "Wavelet decomposition and neural networks: a potent combination for short term wind speed and power forecasting"
+      ]
+    },
+    {
+      "id": "theme-59",
+      "key": "Xenova/all-MiniLM-L6-v2:W4410542857,W7166293018,W7166293900,W7166328196,W7166337347",
+      "publication_ids": [
+        "W4410542857",
+        "W7166293018",
+        "W7166293900",
+        "W7166328196",
+        "W7166337347",
+        "W3121376100",
+        "W4385486882",
+        "W4280584581",
+        "W4290721852",
+        "W4392864791"
+      ],
+      "titles": [
+        "Positive curvature, torus symmetry, and matroids",
+        "The Geometry of the Euclidean Plane",
+        "The Geometry of the Euclidean Plane",
+        "Two-Dimensional Isometries",
+        "The Geometry of the Euclidean Line",
+        "Torus actions on manifolds with positive intermediate Ricci curvature",
+        "Recent work on tessellations of hyperbolic geometries",
+        "Recent work on tessellations of hyperbolic geometries",
+        "Infinite families of manifolds of positive $$k\\mathrm{th}$$-intermediate Ricci curvature with k small",
+        "Positive Intermediate Ricci Curvature with Maximal Symmetry Rank"
+      ]
+    },
+    {
+      "id": "theme-60",
+      "key": "Xenova/all-MiniLM-L6-v2:W4387252684,W4414790175,W4414790041,W4321455032,W4414790039",
+      "publication_ids": [
+        "W4387252684",
+        "W4414790175",
+        "W4414790041",
+        "W4321455032",
+        "W4414790039",
+        "W4403529370",
+        "W4400519371",
+        "W3157733257",
+        "W7134833988",
+        "W4414790143"
+      ],
+      "titles": [
+        "ALISE Historical Perspectives SIG",
+        "Investigating LIS Educator and Practitioner Perspectives of Professional Development",
+        "The Great Unravelling",
+        "Librarians Positioning Preprints for Success: The Role of Preprints in Future Scholarship, Training, and Publishing",
+        "Investigating LIS Educator and Practitioner Perspectives of Professional Development: The 2025 ALISE Leadership Development Intern Panel",
+        "No Evolution Without Revolution: Historical Revelations for LIS Education",
+        "Academic Freedom and Innovation",
+        "Lynne C. Howarth: Navigating the Waters of Change",
+        "Do we think globally? A new journal, 75 years in the making",
+        "Navigating Barriers"
+      ]
+    }
+  ]
+}

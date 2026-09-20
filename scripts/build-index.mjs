@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import { loadThemeLabels, themeKey, validateThemeLabel } from '../lib/theme-labels.mjs';
 import { embedText, MODEL, lexicalEmbed } from '../lib/embeddings.mjs';
 
 const corpus = JSON.parse(await fs.readFile('data/corpus.json', 'utf8'));
@@ -99,66 +100,15 @@ const clusters = Array.from({ length: THEME_COUNT }, (_, cluster) => corpus.publ
   .map((publication, index) => ({ publication, score: assignments[index] === cluster ? dot(pubVectors[index], centroids[cluster]) : -1 }))
   .filter(item => item.score >= 0)
   .sort((a, b) => b.score - a.score));
-// Neural dimensions are not words. Label clusters from their member documents.
-const topTerms = items => {
-  const counts = new Map();
-  for (const { publication } of items.slice(0, 30)) {
-    for (const word of new Set(tokenize(publicationText(publication))))
-      counts.set(word, (counts.get(word) || 0) + 1);
-  }
-  return [...counts].map(([word, count]) => ({word, score: count * Math.log((1 + corpus.publications.length) / (1 + (documentFrequency.get(word) || 0)))}))
-    .sort((a, b) => b.score - a.score).slice(0, 5).map(item => item.word);
-};
-// Reviewed labels from the representative titles; invalidate when representatives change.
-const reviewedNames = {
-  "Xenova/all-MiniLM-L6-v2:W4398193981,W4392567417,W4409045795,W4409324312,W4385214308": {
-    "name": "Entrepreneurial Finance and Sustainable Ventures",
-    "description": "Entrepreneurial funding, startup markets, and environmental and social performance."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4386076031,W4319300011,W4394597621,W4403488453,W4366310357": {
-    "name": "Neural Learning for Point Clouds",
-    "description": "Contrastive learning, feature fusion, and classification of three-dimensional point clouds."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4414790062,W4402633669,W4387252643,W3161940344,W7167638248": {
-    "name": "Social Justice and Antiracist Institutions",
-    "description": "Antiracist practice, media justice, and institutional change in information studies."
-  },
-  "Xenova/all-MiniLM-L6-v2:W7156898800,W3203745194,W7199547026,W4411088407,W3132404058": {
-    "name": "Immune Signaling and Therapeutic Biomaterials",
-    "description": "Macrophage-targeting materials, inflammatory damage, and peptide-based therapies."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4392122595,W7127194890,W3138151157,W7148614652,W4366594192": {
-    "name": "Hydrogel Scaffolds and Biomedical Printing",
-    "description": "Dynamic scaffolds, printable hydrogels, and multiscale perfusable models."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4414052865,W7155178166,W4415122038,W3180660291,W4327694623": {
-    "name": "Speech Perception and Childhood Disorders",
-    "description": "Speech sound disorders, auditory perception, and biofeedback treatment."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4281479600,W4411426908,W3190444875,W4408435664,W7134272283": {
-    "name": "Forest Watersheds and Climate Change",
-    "description": "Watershed hydrology, biogeochemistry, and long-term responses to climate and acidification."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4294690811,W4289943244,W3157491515,W4386174146,W4382138379": {
-    "name": "Exoskeleton Control and Assisted Movement",
-    "description": "Closed-loop control of exoskeletons, electrical stimulation, and assisted cycling."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4299356718,W4407074772,W4400442409,W4403433208,W4416006791": {
-    "name": "Artificial Intelligence and Organizational Work",
-    "description": "Information systems, artificial intelligence, and changes in work and management."
-  },
-  "Xenova/all-MiniLM-L6-v2:W4281258505,W7117468286,W4401107045,W4414149897,W4385230620": {
-    "name": "Alcohol Use and Treatment Outcomes",
-    "description": "Alcohol treatment, drinking-related harms, and interventions for people with chronic conditions."
-  }
-};
-const clusterKeys = clusters.map(items => `${embeddingModel}:${items.slice(0, 5).map(item => item.publication.id).join(',')}`);
+// Persist LLM labels with representative IDs so rebuilds cannot restore keyword lists.
+const reviewedNames = await loadThemeLabels();
+const clusterKeys = clusters.map(items => themeKey(embeddingModel, items.map(item => item.publication.id)));
 const cachedNames = Object.fromEntries(clusters.map((items, index) => {
-  const terms = topTerms(items);
-  return [clusterKeys[index], reviewedNames[clusterKeys[index]] || {
-    name: terms.map(word => word[0].toUpperCase() + word.slice(1)).join(' / '),
-    description: `Research on ${terms.join(', ')}.`
-  }];
+  const label = reviewedNames[clusterKeys[index]];
+  if (!label) {
+    throw new Error(`Missing reviewed theme label. Generate a 4-to-8-word research-area name without slashes or keyword lists and a descriptive sentence from these top 10 titles, then save it under ${clusterKeys[index]} in data/theme-labels.json: ${JSON.stringify(items.slice(0, 10).map(item => item.publication.title))}`);
+  }
+  return [clusterKeys[index], validateThemeLabel(label)];
 }));
 
 const themes = clusters.map((items, index) => {
