@@ -1,0 +1,77 @@
+/* Orange is limited to one primary action and one match-strength label. */
+[data-testid="stHeader"] {
+    border-top: 4px solid #000E54;
+}
+
+[data-testid="stSidebar"] {
+    border-right: 1px solid #000E54;
+}
+
+[data-testid="stMain"] h1 {
+    border-bottom: 1px solid #000E54;
+    padding-bottom: 0.65rem;
+}
+
+[data-testid="stCaptionContainer"] {
+    color: #000E54;
+}
+
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+    text-decoration: underline;
+    text-decoration-color: #000E54;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.4rem;
+}
+
+[data-testid="stMain"] [data-testid="stVerticalBlockBorderWrapper"] {
+    border-top-color: #000E54;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible,
+textarea:focus-visible, summary:focus-visible {
+    outline: 3px solid #000E54 !important;
+    outline-offset: 3px;
+}
+
+[data-testid="stBaseButton-primary"],
+[data-testid="stBaseButton-primaryFormSubmit"] {
+    background: #F76900 !important;
+    border-color: #000E54 !important;
+    color: #000E54 !important;
+}
+
+.st-key-availability_action [data-testid="stCheckbox"] label > div:first-of-type {
+    background-color: #F76900 !important;
+    border: 1px solid #000E54;
+}
+
+.match-strength {
+    border-left: 4px solid #F76900;
+    padding-left: 0.75rem;
+    color: #000E54;
+}
+
+.publication-title {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    [data-testid="stMainBlockContainer"] {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    [data-testid="stHorizontalBlock"] {
+        flex-wrap: wrap;
+    }
+    [data-testid="stColumn"] {
+        width: 100%;
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+    [data-testid="stMarkdownContainer"], button p {
+        overflow-wrap: anywhere;
+    }
+}

@@ -1,0 +1,18 @@
+# Syracuse University primary palette: https://designsystem.syr.edu/documentation/design-tokens/color/
+[theme]
+base = "light"
+primaryColor = "#000E54"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#000E54"
+linkColor = "#000E54"
+borderColor = "#000E54"
+showWidgetBorder = true
+
+[theme.sidebar]
+primaryColor = "#000E54"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#000E54"
+linkColor = "#000E54"
+borderColor = "#000E54"
